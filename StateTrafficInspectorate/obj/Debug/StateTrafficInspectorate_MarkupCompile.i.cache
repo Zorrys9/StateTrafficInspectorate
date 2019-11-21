@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Марина\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\
 StateTrafficInspectorate
 none
 false
 DEBUG;TRACE
-C:\Users\Марина\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\App.xaml
-5-1350018625
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\App.xaml
+6-282237698
 
-10-309723903
-17-638172433
-Inspector\AuthorizationInspector.xaml;Inspector\Driver\AddDriverWindow.xaml;Inspector\Driver\DriverList.xaml;Inspector\InspectorMainWindow.xaml;MainWindow.xaml;
+11-17806885
+160-2060795131
+Inspector\AuthorizationInspector.xaml;Inspector\Driver\AddDriverWindow.xaml;Inspector\Driver\CurrentDriver.xaml;Inspector\Driver\DriverList.xaml;Inspector\InspectorMainWindow.xaml;MainWindow.xaml;
 
 True
 

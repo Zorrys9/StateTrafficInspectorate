@@ -51,17 +51,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContext.cs" />
-    <Compile Include="EntityModels\CategoryTransport.cs" />
-    <Compile Include="EntityModels\Drivers.cs" />
-    <Compile Include="EntityModels\HistoryStatusLicense.cs" />
-    <Compile Include="EntityModels\Inspector.cs" />
-    <Compile Include="EntityModels\Insurances.cs" />
-    <Compile Include="EntityModels\License.cs" />
-    <Compile Include="EntityModels\Position.cs" />
-    <Compile Include="EntityModels\StatusLicense.cs" />
-    <Compile Include="EntityModels\Transport.cs" />
-    <Compile Include="EntityModels\TypeOfDrive.cs" />
-    <Compile Include="EntityModels\TypeTransport.cs" />
+    <Compile Include="EntityModels\CategoryTransportEntityModels.cs" />
+    <Compile Include="EntityModels\DriversEntityModels.cs" />
+    <Compile Include="EntityModels\HistoryStatusLicenseEntityModels.cs" />
+    <Compile Include="EntityModels\InspectorEntityModels.cs" />
+    <Compile Include="EntityModels\InsurancesEntityModels.cs" />
+    <Compile Include="EntityModels\LicenseEntityModels.cs" />
+    <Compile Include="EntityModels\PositionEntityModels.cs" />
+    <Compile Include="EntityModels\StatusLicenseEntityModels.cs" />
+    <Compile Include="EntityModels\TransportEntityModels.cs" />
+    <Compile Include="EntityModels\TypeOfDriveEntityModels.cs" />
+    <Compile Include="EntityModels\TypeTransportEntityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

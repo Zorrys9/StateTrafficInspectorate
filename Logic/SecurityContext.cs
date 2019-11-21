@@ -9,5 +9,6 @@ namespace Logic
    public class SecurityContext
     {
         public static int IdUser;
+        public static int CurrentDriver;
     }
 }

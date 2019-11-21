@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Logic.ViewModels;
+using Logic.Models;
 namespace Logic.LogicsModel
 {
     public class DriverLogic
@@ -29,6 +30,24 @@ namespace Logic.LogicsModel
                 dt.Rows.Add(driverView.Name, driverView.DateBirth.ToShortDateString(), driverView.Passport, driverView.FullAddress, driverView.Telephone, driverView.DrivingExperience, driverView.Email);
             }
             return dt;
+        }
+
+        public static void AddDriver(DriverModel newDriver)
+        {
+            DbContext.db.Drivers.Add(newDriver);
+            DbContext.db.SaveChanges();
+        }
+
+        public static void CurrentDriver(string pasp)
+        {
+            SecurityContext.CurrentDriver = DbContext.db.Drivers.Where(dr => dr.SerialPasp == pasp.Substring(0, 4) && dr.NumberPasp == pasp.Substring(5, 6)).FirstOrDefault().Id;
+        }
+
+        public static DriverModel GetDriver()
+        {
+
+            return DbContext.db.Drivers.Where(dr => dr.Id == SecurityContext.CurrentDriver).FirstOrDefault();         
+
         }
 
     }

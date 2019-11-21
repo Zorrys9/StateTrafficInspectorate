@@ -33,9 +33,9 @@ namespace Logic.Models
         public int? Position { get; set; }
 
 
-        public static implicit operator Inspector(InspectorModel inspector)
+        public static implicit operator InspectorEntityModel(InspectorModel inspector)
         {
-            return new Inspector
+            return new InspectorEntityModel
             {
                 FirstName = inspector.FirstName,
                 LastName = inspector.LastName,
@@ -45,7 +45,7 @@ namespace Logic.Models
                 Position = inspector.Position,
             };
         }
-        public static implicit operator InspectorModel(Inspector inspector)
+        public static implicit operator InspectorModel(InspectorEntityModel inspector)
         {
             return new InspectorModel
             {

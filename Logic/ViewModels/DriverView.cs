@@ -18,7 +18,7 @@ namespace Logic.ViewModels
         public int? DrivingExperience { get; set; }
         public string Email { get; set; }
 
-        public static implicit operator DriverView(Drivers driver)
+        public static implicit operator DriverView(DriversEntityModels driver)
         {
             return new DriverView
             {

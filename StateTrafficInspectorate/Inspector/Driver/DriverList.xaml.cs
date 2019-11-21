@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Logic.LogicsModel;
-
 namespace StateTrafficInspectorate.Inspector.Driver
 {
     /// <summary>
@@ -29,6 +28,7 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
         private void DataGrid_Loaded(object sender, RoutedEventArgs e)
         {
+
             try
             {
 
@@ -38,10 +38,10 @@ namespace StateTrafficInspectorate.Inspector.Driver
             }
             catch(Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
-
             }
+
+
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -56,6 +56,23 @@ namespace StateTrafficInspectorate.Inspector.Driver
             AddDriverWindow addDriver = new AddDriverWindow();
             addDriver.Show();
             this.Close();
+        }
+
+        private void ListDriver_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+                if (ListDriver.SelectedCells.Count() > 0)
+                {
+
+                    DriverLogic.CurrentDriver(TableDriver.Rows[ListDriver.SelectedIndex].ItemArray[2].ToString());
+
+                    CurrentDriver currentDriver = new CurrentDriver();
+                    currentDriver.Show();
+                    this.Close();
+
+                }
+
+
         }
     }
 }

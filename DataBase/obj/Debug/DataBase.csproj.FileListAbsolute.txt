@@ -12,3 +12,16 @@ C:\Users\Марина\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\D
 C:\Users\Марина\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.csproj.CopyComplete
 C:\Users\Марина\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.dll
 C:\Users\Марина\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.pdb
+C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\bin\Debug\DataBase.dll.config
+C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\bin\Debug\DataBase.dll
+C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\bin\Debug\DataBase.pdb
+C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\bin\Debug\EntityFramework.dll
+C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\bin\Debug\EntityFramework.xml
+C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.csproj.CopyComplete
+C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.dll
+C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.pdb
+C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.csprojAssemblyReference.cache

@@ -15,94 +15,94 @@ namespace DataBase
         {
         }
 
-        public virtual DbSet<CategoryTransport> CategoryTransport { get; set; }
-        public virtual DbSet<Drivers> Drivers { get; set; }
-        public virtual DbSet<HistoryStatusLicense> HistoryStatusLicense { get; set; }
-        public virtual DbSet<Inspector> Inspector { get; set; }
-        public virtual DbSet<Insurances> Insurances { get; set; }
-        public virtual DbSet<License> License { get; set; }
-        public virtual DbSet<Position> Position { get; set; }
-        public virtual DbSet<StatusLicense> StatusLicense { get; set; }
-        public virtual DbSet<Transport> Transport { get; set; }
-        public virtual DbSet<TypeOfDrive> TypeOfDrive { get; set; }
-        public virtual DbSet<TypeTransport> TypeTransport { get; set; }
+        public virtual DbSet<CategoryTransportEntityModels> CategoryTransport { get; set; }
+        public virtual DbSet<DriversEntityModels> Drivers { get; set; }
+        public virtual DbSet<HistoryStatusLicenseEntityModels> HistoryStatusLicense { get; set; }
+        public virtual DbSet<InspectorEntityModel> Inspector { get; set; }
+        public virtual DbSet<InsurancesEntityModels> Insurances { get; set; }
+        public virtual DbSet<LicenseEntityModels> License { get; set; }
+        public virtual DbSet<PositionEntityModels> Position { get; set; }
+        public virtual DbSet<StatusLicenseEntityModels> StatusLicense { get; set; }
+        public virtual DbSet<TransportEntityModels> Transport { get; set; }
+        public virtual DbSet<TypeOfDriveEntityModels> TypeOfDrive { get; set; }
+        public virtual DbSet<TypeTransportEntityModels> TypeTransport { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CategoryTransport>()
+            modelBuilder.Entity<CategoryTransportEntityModels>()
                 .HasMany(e => e.Transport)
                 .WithRequired(e => e.CategoryTransport1)
                 .HasForeignKey(e => e.CategoryTransport)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Drivers>()
+            modelBuilder.Entity<DriversEntityModels>()
                 .Property(e => e.Telephone)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Drivers>()
+            modelBuilder.Entity<DriversEntityModels>()
                 .HasMany(e => e.License)
                 .WithRequired(e => e.Drivers)
                 .HasForeignKey(e => e.IdDriver)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Inspector>()
+            modelBuilder.Entity<InspectorEntityModel>()
                 .HasMany(e => e.HistoryStatusLicense)
                 .WithRequired(e => e.Inspector)
                 .HasForeignKey(e => e.IdInspector)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Insurances>()
+            modelBuilder.Entity<InsurancesEntityModels>()
                 .HasMany(e => e.Drivers)
                 .WithOptional(e => e.Insurances)
                 .HasForeignKey(e => e.InsuranceId);
 
-            modelBuilder.Entity<License>()
+            modelBuilder.Entity<LicenseEntityModels>()
                 .HasMany(e => e.HistoryStatusLicense)
                 .WithRequired(e => e.License)
                 .HasForeignKey(e => e.IdLicense)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Position>()
+            modelBuilder.Entity<PositionEntityModels>()
                 .HasMany(e => e.Inspector)
                 .WithOptional(e => e.Position1)
                 .HasForeignKey(e => e.Position);
 
-            modelBuilder.Entity<StatusLicense>()
+            modelBuilder.Entity<StatusLicenseEntityModels>()
                 .HasMany(e => e.HistoryStatusLicense)
                 .WithRequired(e => e.StatusLicense)
                 .HasForeignKey(e => e.PrevStatus)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<StatusLicense>()
+            modelBuilder.Entity<StatusLicenseEntityModels>()
                 .HasMany(e => e.HistoryStatusLicense1)
                 .WithRequired(e => e.StatusLicense1)
                 .HasForeignKey(e => e.CurrentStatus)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<StatusLicense>()
+            modelBuilder.Entity<StatusLicenseEntityModels>()
                 .HasMany(e => e.License)
                 .WithOptional(e => e.StatusLicense)
                 .HasForeignKey(e => e.Status);
 
-            modelBuilder.Entity<Transport>()
+            modelBuilder.Entity<TransportEntityModels>()
                 .HasMany(e => e.Insurances)
                 .WithRequired(e => e.Transport)
                 .HasForeignKey(e => e.IdTransport)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Transport>()
+            modelBuilder.Entity<TransportEntityModels>()
                 .HasMany(e => e.License)
                 .WithRequired(e => e.Transport)
                 .HasForeignKey(e => e.IdTransport)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<TypeOfDrive>()
+            modelBuilder.Entity<TypeOfDriveEntityModels>()
                 .HasMany(e => e.Transport)
                 .WithRequired(e => e.TypeOfDrive1)
                 .HasForeignKey(e => e.TypeOfDrive)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<TypeTransport>()
+            modelBuilder.Entity<TypeTransportEntityModels>()
                 .HasMany(e => e.Transport)
                 .WithRequired(e => e.TypeTransport1)
                 .HasForeignKey(e => e.TypeTransport)

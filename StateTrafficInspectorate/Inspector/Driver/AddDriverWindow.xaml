@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Добавление нового водителя" Height="637.2" Width="666.8">
     <Grid>
-        <Label Content="Фамилия" FontSize="16" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+
+        <Label Content="Фамилия" FontSize="16" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="78"/>
         <Label Content="Имя" FontSize="16" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>
         <Label Content="Отчество" FontSize="16" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top"/>
         <Label Content="Дата рождения" FontSize="16" HorizontalAlignment="Left" Margin="287,10,0,0" VerticalAlignment="Top"/>
@@ -26,7 +27,27 @@
         <Label Content="Место работы" FontSize="16" HorizontalAlignment="Left" Margin="10,393,0,0" VerticalAlignment="Top"/>
         <Label Content="Должность" FontSize="16" HorizontalAlignment="Left" Margin="287,393,0,0" VerticalAlignment="Top"/>
         <Label Content="Email" FontSize="16" HorizontalAlignment="Left" Margin="10,430,0,0" VerticalAlignment="Top"/>
-        <Label Content="Замечание" FontSize="16" HorizontalAlignment="Left" Margin="10,467,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="FirstName" HorizontalAlignment="Left" TabIndex="1" Height="30" MaxLength="50" FontSize="18" Margin="100,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
+        <TextBox x:Name="LastName" HorizontalAlignment="Left" TabIndex="2" Height="31" MaxLength="50" FontSize="18" Margin="100,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
+        <TextBox x:Name="Patronymic" HorizontalAlignment="Left" TabIndex="3" Height="31" MaxLength="50" FontSize="18" Margin="100,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
+        <TextBox x:Name="Expirience" HorizontalAlignment="Left" TabIndex="6" Height="31" MaxLength="2" FontSize="18" Margin="442,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="46"/>
+        <TextBox x:Name="Phone" HorizontalAlignment="Left" TabIndex="5" Height="31" MaxLength="10" FontSize="18" Margin="399,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174"/>
+        <TextBox x:Name="PaspSeries" HorizontalAlignment="Left" TabIndex="7" Height="31" MaxLength="4" FontSize="18" Margin="150,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131"/>
+        <TextBox x:Name="PaspNumber" HorizontalAlignment="Left" TabIndex="8" Height="31" MaxLength="6" FontSize="18" Margin="352,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198"/>
+        <TextBox x:Name="CityLife" HorizontalAlignment="Left" TabIndex="9" Height="31" MaxLength="50" FontSize="18" Margin="150,228,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131"/>
+        <TextBox x:Name="AddressLife" HorizontalAlignment="Left" TabIndex="10" Height="31" MaxLength="100" FontSize="18" Margin="352,228,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198"/>
+        <TextBox x:Name="City" HorizontalAlignment="Left" TabIndex="11" Height="31" MaxLength="50" FontSize="18" Margin="150,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131"/>
+        <TextBox x:Name="Address" HorizontalAlignment="Left" TabIndex="12" Height="31" MaxLength="100" FontSize="18" Margin="352,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="198"/>
+        <TextBox x:Name="PostCode" HorizontalAlignment="Left" TabIndex="13" Height="31" MaxLength="10" FontSize="18" Margin="150,351,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131"/>
+        <TextBox x:Name="Company" HorizontalAlignment="Left" TabIndex="14" Height="31" MaxLength="50" FontSize="18" Margin="150,393,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131"/>
+        <TextBox x:Name="JobName" HorizontalAlignment="Left" TabIndex="15" Height="31" MaxLength="50" FontSize="18" Margin="392,393,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131"/>
+        <TextBox x:Name="Email" HorizontalAlignment="Left" TabIndex="16" Height="31" MaxLength="50" FontSize="18" Margin="150,430,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="228"/>
+        <DatePicker x:Name="DateBirth" HorizontalAlignment="Left" FontSize="18" TabIndex="4" Margin="416,10,0,0" VerticalAlignment="Top" Width="134"/>
+        <Label Content="+7" FontSize="16" HorizontalAlignment="Left" Margin="374,47,0,0" VerticalAlignment="Top" Width="35"/>
+        <Button x:Name="AddDriver" FontSize="16" Content="Добавить" HorizontalAlignment="Left" Margin="520,475,0,0" VerticalAlignment="Top" Width="129" Height="50" Click="AddDriver_Click"/>
+        <Button x:Name="Photo" Content="Обзор..." FontSize="16" HorizontalAlignment="Left" Margin="150,472,0,0" VerticalAlignment="Top" Width="75" Click="Photo_Click"/>
+        <Label Content="Фотография" FontSize="16" HorizontalAlignment="Left" Margin="10,466,0,0" VerticalAlignment="Top"/>
+        <TextBlock FontSize="16" x:Name="ImageURL" HorizontalAlignment="Left" Margin="13,502,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="38"/>
 
     </Grid>
 </Window>
