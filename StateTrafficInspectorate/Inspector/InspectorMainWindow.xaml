@@ -1,0 +1,20 @@
+﻿<Window x:Class="StateTrafficInspectorate.Inspector.InspectorMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector"
+        mc:Ignorable="d"
+        Title="Главное окно инспектора" Height="450" Width="697.191" Loaded="Window_Loaded">
+    <Grid>
+        <GroupBox Header="Личная информация" FontSize="16"  HorizontalAlignment="Left" Height="228" Margin="415,10,0,0" VerticalAlignment="Top" Width="265">
+            <Label Content="ФИО" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Margin="0,10,0,0" Height="34"/>
+        </GroupBox>
+        <TextBox x:Name="Name" FontSize="16"  HorizontalAlignment="Left" Height="33" Margin="436,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230"/>
+        <Label Content="Должность" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="107" Margin="425,144,0,0" Height="34"/>
+        <TextBox x:Name="Position" FontSize="16"  HorizontalAlignment="Left" Height="33" Margin="436,183,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230"/>
+        <Button x:Name="Drivers" Content="Список водителей" FontSize="16" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="199" Height="51" Click="Drivers_Click"/>
+        <Button x:Name="Transport" Content="Список автомобилей" FontSize="16" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Width="199" Height="51"/>
+
+    </Grid>
+</Window>

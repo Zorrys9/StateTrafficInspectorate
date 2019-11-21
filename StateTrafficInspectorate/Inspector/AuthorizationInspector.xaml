@@ -1,0 +1,17 @@
+﻿<Window x:Class="StateTrafficInspectorate.Inspector.AuthorizationInspector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="246.8" Width="385.6">
+    <Grid>
+        <Button Content="Вход" HorizontalAlignment="Left" Margin="194,105,0,0" TabIndex="3" VerticalAlignment="Top" Width="153" Height="77" Click="Authorization_Click"/>
+        <Label Content="Логин" FontSize="16" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top"/>
+        <Label Content="Пароль" FontSize="16" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>
+        <TextBox FontSize="18" MaxLength="50" TabIndex="1" x:Name="Login" HorizontalAlignment="Left" Height="32" Margin="90,3,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="257"/>
+        <PasswordBox HorizontalAlignment="Left" FontSize="18" MaxLength="50" TabIndex="2" x:Name="Password" Margin="90,40,0,0" VerticalAlignment="Top" Width="257" Height="32"/>
+
+    </Grid>
+</Window>
