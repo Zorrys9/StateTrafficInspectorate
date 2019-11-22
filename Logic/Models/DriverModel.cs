@@ -34,9 +34,6 @@ namespace Logic.Models
         [Column(TypeName = "date")]
         public DateTime DateBirth { get; set; }
 
-        [StringLength(50)]
-        public string AddressCity { get; set; }
-
         [StringLength(100)]
         public string FullAddress { get; set; }
 
@@ -64,9 +61,6 @@ namespace Logic.Models
 
         public byte[] Photo { get; set; }
 
-        [StringLength(50)]
-        public string AddressLifeCity { get; set; }
-
         [StringLength(100)]
         public string FullAddressLife { get; set; }
 
@@ -81,9 +75,7 @@ namespace Logic.Models
                 NumberPasp = driver.NumberPasp,
                 DateBirth = driver.DateBirth,
                 FullAddress = driver.FullAddress,
-                AddressLifeCity = driver.AddressLifeCity,
                 FullAddressLife = driver.FullAddressLife,
-                AddressCity = driver.AddressCity,
                 Telephone = driver.Telephone,
                 DrivingExperience = driver.DrivingExperience,
                 InsuranceId = driver.InsuranceId,
@@ -106,9 +98,7 @@ namespace Logic.Models
                 NumberPasp = driver.NumberPasp,
                 DateBirth = driver.DateBirth,
                 FullAddress = driver.FullAddress,
-                AddressLifeCity = driver.AddressLifeCity,
                 FullAddressLife = driver.FullAddressLife,
-                AddressCity = driver.AddressCity,
                 Telephone = driver.Telephone,
                 DrivingExperience = driver.DrivingExperience,
                 InsuranceId = driver.InsuranceId,

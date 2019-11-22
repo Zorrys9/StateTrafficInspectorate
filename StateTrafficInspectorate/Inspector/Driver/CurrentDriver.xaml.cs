@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Logic.LogicsModel;
-using Logic.Models;
+using Logic.ViewModels;
 using Logic.OtherLogic;
 namespace StateTrafficInspectorate.Inspector.Driver
 {
@@ -35,8 +35,34 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            DriverModel driver = DriverLogic.GetDriver();
-            ImageDriver.Source = ImageLogic.ImageFromByte(driver.Photo);
+            try
+            {
+                DriverViewModel driver = DriverLogic.GetCurrentDriver();
+
+                if(driver.Photo != null)
+                {
+                    borderImage.BorderBrush = Brushes.White;
+                    ImageDriver.Source = ImageLogic.ImageFromByte(driver.Photo);
+                }
+
+                Name.Text = driver.Name;
+                Phone.Text = driver.Telephone;
+                Mail.Text = driver.Email;
+                Passport.Text = driver.Passport;
+                DateBirth.SelectedDate = driver.DateBirth;
+                Address.Text = driver.FullAddress;
+                AddressLife.Text = driver.AddressLife;
+                PostCode.Text = driver.PostCode.ToString();
+                Company.Text = driver.Company;
+                JobName.Text = driver.JobName;
+                Expirience.Text = driver.DrivingExperience.ToString();
+        
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

@@ -5,10 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector.Driver"
         mc:Ignorable="d"
-        Title="CurrentDriver" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="Карточка водителя" Height="533.2" Width="798.4" Loaded="Window_Loaded">
     <Grid>
-        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Height="59" Margin="690,350,0,0" VerticalAlignment="Top" Width="92" Click="Back_Click"/>
-        <Image x:Name="ImageDriver" HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Height="59" Margin="690,434,0,0" VerticalAlignment="Top" Width="92" Click="Back_Click"/>
+        <Border BorderBrush="Black" x:Name="borderImage" BorderThickness="1" HorizontalAlignment="Left" Height="240" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
+            <Image x:Name="ImageDriver" HorizontalAlignment="Left" Height="240" VerticalAlignment="Top" Width="180" Margin="-0.8,-0.8,-1.8,-1" />
+        </Border>
+        <Label Content="ФИО" FontSize="16" HorizontalAlignment="Left" Margin="201,10,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label Content="Телефон" FontSize="16" HorizontalAlignment="Left" Margin="201,47,0,0" VerticalAlignment="Top" Width="88"/>
+        <Label Content="Email" FontSize="16" HorizontalAlignment="Left" Margin="201,84,0,0" VerticalAlignment="Top" Width="88"/>
+        <Label Content="Дата рождения" FontSize="16" HorizontalAlignment="Left" Margin="201,158,0,0" VerticalAlignment="Top" Width="135" RenderTransformOrigin="0.477,4.466"/>
+        <Label Content="Паспорт" FontSize="16" HorizontalAlignment="Left" Margin="201,121,0,0" VerticalAlignment="Top" Width="88"/>
+        <Label Content="Место жительства" FontSize="16" HorizontalAlignment="Left" Margin="10,256,0,0" VerticalAlignment="Top" Width="161" RenderTransformOrigin="0.477,4.466"/>
+        <Label Content="Адрес прописки" FontSize="16" HorizontalAlignment="Left" Margin="10,294,0,0" VerticalAlignment="Top" Width="161" RenderTransformOrigin="0.477,4.466"/>
+        <Label Content="Почтовый индекс" FontSize="16" HorizontalAlignment="Left" Margin="10,331,0,0" VerticalAlignment="Top" Width="161" RenderTransformOrigin="0.477,4.466"/>
+        <Label Content="Должность" FontSize="16" HorizontalAlignment="Left" Margin="10,404,0,0" VerticalAlignment="Top" Width="161" RenderTransformOrigin="0.477,4.466"/>
+        <Label Content="Место работы" FontSize="16" HorizontalAlignment="Left" Margin="10,368,0,0" VerticalAlignment="Top" Width="161" RenderTransformOrigin="0.477,4.466"/>
+        <Label Content="Водительский стаж" FontSize="16" HorizontalAlignment="Left" Margin="206,196,0,0" VerticalAlignment="Top" Width="161" RenderTransformOrigin="0.477,4.466"/>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" FontSize="18" Height="32" Margin="281,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358"/>
+        <TextBox x:Name="Phone" HorizontalAlignment="Left" FontSize="18" Height="32" Margin="281,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358"/>
+        <TextBox x:Name="Mail" HorizontalAlignment="Left" FontSize="18" Height="32" Margin="281,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358"/>
+        <TextBox x:Name="Passport" HorizontalAlignment="Left" FontSize="18" Height="32" Margin="281,121,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="358"/>
+        <TextBox x:Name="AddressLife" HorizontalAlignment="Left" FontSize="18" Height="32" Margin="176,256,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="438"/>
+        <TextBox x:Name="Address" HorizontalAlignment="Left" FontSize="18" Height="32" Margin="176,294,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="438"/>
+        <TextBox x:Name="PostCode" HorizontalAlignment="Left" FontSize="18" Height="32" Margin="176,331,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="438"/>
+        <TextBox x:Name="Company" HorizontalAlignment="Left" FontSize="18" Height="32" Margin="176,368,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="438"/>
+        <TextBox x:Name="JobName" HorizontalAlignment="Left" FontSize="18" Height="32" Margin="176,404,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="438"/>
+        <TextBox x:Name="Expirience" HorizontalAlignment="Left" FontSize="18" Height="32" Margin="372,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="64"/>
+        <DatePicker x:Name="DateBirth" HorizontalAlignment="Left" FontSize="18" Margin="341,158,0,0" VerticalAlignment="Top" Height="33" Width="185"/>
 
     </Grid>
 </Window>

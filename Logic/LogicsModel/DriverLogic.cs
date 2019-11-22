@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Logic.ViewModels;
 using Logic.Models;
+using System.Text.RegularExpressions;
+
 namespace Logic.LogicsModel
 {
     public class DriverLogic
@@ -22,7 +24,7 @@ namespace Logic.LogicsModel
             dt.Columns.Add("Водительский стаж");
             dt.Columns.Add("Email");
 
-            DriverView driverView;
+            DriverViewModel driverView;
             var ListDriver = DbContext.db.Drivers;
             foreach(var driver in ListDriver)
             {
@@ -34,6 +36,8 @@ namespace Logic.LogicsModel
 
         public static void AddDriver(DriverModel newDriver)
         {
+            newDriver.Telephone = "+7" + CheckPhone(newDriver.Telephone);
+            newDriver.Email = CheckEmail(newDriver.Email);
             DbContext.db.Drivers.Add(newDriver);
             DbContext.db.SaveChanges();
         }
@@ -43,11 +47,24 @@ namespace Logic.LogicsModel
             SecurityContext.CurrentDriver = DbContext.db.Drivers.Where(dr => dr.SerialPasp == pasp.Substring(0, 4) && dr.NumberPasp == pasp.Substring(5, 6)).FirstOrDefault().Id;
         }
 
-        public static DriverModel GetDriver()
+        public static DriverViewModel GetCurrentDriver()
         {
-
             return DbContext.db.Drivers.Where(dr => dr.Id == SecurityContext.CurrentDriver).FirstOrDefault();         
+        }
 
+        static string CheckPhone(string phone)
+        {
+            Regex regexPhone = new Regex(@"^[0-9]+$");
+            if (regexPhone.IsMatch(phone) && phone.Length == 10)
+                return phone;
+            else throw new Exception("Телефон введен не верно!");
+        }
+        static string CheckEmail(string email)
+        {
+            Regex regexMail = new Regex(@"^(?("")(""[^""]+?""@)|(([0-9a-zA-Z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" + @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$");
+            if (regexMail.IsMatch(email))
+                return email;
+            else throw new Exception("Email введен не верно!");
         }
 
     }

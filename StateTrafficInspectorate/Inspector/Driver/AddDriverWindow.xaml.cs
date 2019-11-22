@@ -25,7 +25,7 @@ namespace StateTrafficInspectorate.Inspector.Driver
     public partial class AddDriverWindow : Window
     {
         public AddDriverWindow()
-        {new BitmapImage();
+        {
             InitializeComponent();
         }
 
@@ -43,19 +43,24 @@ namespace StateTrafficInspectorate.Inspector.Driver
                     SerialPasp = PaspSeries.Text,
                     NumberPasp = PaspNumber.Text,
                     DateBirth = DateBirth.SelectedDate.Value,
-                    FullAddress = Address.Text,
-                    AddressLifeCity = CityLife.Text,
-                    FullAddressLife = AddressLife.Text,
-                    AddressCity = City.Text,
-                    Telephone = "+7" + Phone.Text,
+                    FullAddressLife = CityLife.Text + " " + AddressLife.Text,
+                    FullAddress = City.Text + " " + AddressLife.Text,
+                    Telephone = Phone.Text,
                     DrivingExperience = int.Parse(Expirience.Text),
                     PostCode = int.Parse(PostCode.Text),
                     Company = Company.Text,
                     JobName = JobName.Text,
-                    Email = Email.Text,
-                    Photo = ImageLogic.ByteFromImage(ImageURL.Text)
+                    Email = Email.Text
+                    
                 };
-
+                if(ImageURL.Text == "")
+                {
+                    newDriver.Photo = null;
+                }
+                else
+                {
+                    newDriver.Photo = ImageLogic.ByteFromImage(ImageURL.Text);
+                }
                 DriverLogic.AddDriver(newDriver);
 
                 MessageBox.Show("Водитель успешно добавлен!");
@@ -64,7 +69,7 @@ namespace StateTrafficInspectorate.Inspector.Driver
                 driverList.Show();
                 this.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

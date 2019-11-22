@@ -60,7 +60,7 @@
     <Compile Include="OtherLogic\ImageLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecurityContext.cs" />
-    <Compile Include="ViewModels\DriverView.cs" />
+    <Compile Include="ViewModels\DriverViewModel.cs" />
     <Compile Include="ViewModels\InspectorViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

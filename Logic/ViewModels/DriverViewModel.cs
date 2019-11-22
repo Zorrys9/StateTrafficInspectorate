@@ -7,7 +7,7 @@ using DataBase.EntityModels;
 
 namespace Logic.ViewModels
 {
-    public class DriverView
+    public class DriverViewModel
     {
 
         public string Name { get; set; }
@@ -17,18 +17,28 @@ namespace Logic.ViewModels
         public string Telephone { get; set; }
         public int? DrivingExperience { get; set; }
         public string Email { get; set; }
+        public byte[] Photo { get; set; }
+        public string AddressLife { get; set; }
+        public int PostCode { get; set; }
+        public string Company { get; set; }
+        public string JobName { get; set; }
 
-        public static implicit operator DriverView(DriversEntityModels driver)
+        public static implicit operator DriverViewModel(DriversEntityModels driver)
         {
-            return new DriverView
+            return new DriverViewModel
             {
-                Name = driver.FirstName + "." + driver.LastName.Substring(0, 1) + "." + driver.Patronymic.Substring(0, 1),
+                Name = driver.FirstName + " " + driver.LastName + " " + driver.Patronymic,
                 DateBirth = driver.DateBirth,
                 Passport = driver.SerialPasp + " " + driver.NumberPasp,
-                FullAddress = driver.AddressCity + " " + driver.FullAddress,
+                FullAddress = driver.FullAddress,
                 Telephone = driver.Telephone,
                 DrivingExperience = driver.DrivingExperience,
-                Email = driver.Email
+                Email = driver.Email,
+                Photo = driver.Photo,
+                AddressLife = driver.FullAddressLife,
+                PostCode = driver.PostCode,
+                Company = driver.Company,
+                JobName = driver.JobName
             };
         }
     }

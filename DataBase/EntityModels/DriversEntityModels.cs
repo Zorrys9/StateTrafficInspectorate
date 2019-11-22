@@ -39,9 +39,6 @@ namespace DataBase.EntityModels
         [Column(TypeName = "date")]
         public DateTime DateBirth { get; set; }
 
-        [StringLength(50)]
-        public string AddressCity { get; set; }
-
         [StringLength(100)]
         public string FullAddress { get; set; }
 
@@ -66,11 +63,8 @@ namespace DataBase.EntityModels
         [Required]
         [StringLength(50)]
         public string Email { get; set; }
-
+        
         public byte[] Photo { get; set; }
-
-        [StringLength(50)]
-        public string AddressLifeCity { get; set; }
 
         [StringLength(100)]
         public string FullAddressLife { get; set; }

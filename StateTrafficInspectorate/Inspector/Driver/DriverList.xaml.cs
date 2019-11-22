@@ -60,6 +60,8 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
         private void ListDriver_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            try
+            {
 
                 if (ListDriver.SelectedCells.Count() > 0)
                 {
@@ -71,6 +73,13 @@ namespace StateTrafficInspectorate.Inspector.Driver
                     this.Close();
 
                 }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
 
 
         }
