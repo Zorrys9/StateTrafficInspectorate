@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector.Driver"
         mc:Ignorable="d"
-        Title="Карточка водителя" Height="533.2" Width="798.4" Loaded="Window_Loaded">
+        Title="Карточка водителя" Height="562" Width="664" Loaded="Window_Loaded" Style="{StaticResource StyleWindow}">
     <Grid>
-        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Height="59" Margin="690,434,0,0" VerticalAlignment="Top" Width="92" Click="Back_Click"/>
+        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Height="54" Margin="493,460,0,0" VerticalAlignment="Top" Width="121" Click="Back_Click" RenderTransformOrigin="-0.947,0.525"/>
         <Border BorderBrush="Black" x:Name="borderImage" BorderThickness="1" HorizontalAlignment="Left" Height="240" Margin="10,10,0,0" VerticalAlignment="Top" Width="180">
             <Image x:Name="ImageDriver" HorizontalAlignment="Left" Height="240" VerticalAlignment="Top" Width="180" Margin="-0.8,-0.8,-1.8,-1" />
         </Border>
@@ -33,6 +33,9 @@
         <TextBox x:Name="JobName" HorizontalAlignment="Left" FontSize="18" Height="32" Margin="176,404,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="438"/>
         <TextBox x:Name="Expirience" HorizontalAlignment="Left" FontSize="18" Height="32" Margin="372,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="64"/>
         <DatePicker x:Name="DateBirth" HorizontalAlignment="Left" FontSize="18" Margin="341,158,0,0" VerticalAlignment="Top" Height="33" Width="185"/>
+        <Button x:Name="Back_Copy" Content="Удалить" HorizontalAlignment="Left" Height="54" Margin="350,460,0,0" VerticalAlignment="Top" Width="121" Click="Back_Click"/>
+        <Button x:Name="Back_Copy1" Content="Изменить" HorizontalAlignment="Left" Height="54" Margin="216,460,0,0" VerticalAlignment="Top" Width="121" Click="Back_Click"/>
+        <Button x:Name="Back_Copy2" Content="Изменить статус ВУ" HorizontalAlignment="Left" Height="54" Margin="10,460,0,0" VerticalAlignment="Top" Width="186" Click="Back_Click"/>
 
     </Grid>
 </Window>

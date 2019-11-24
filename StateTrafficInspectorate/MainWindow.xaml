@@ -5,9 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate"
         mc:Ignorable="d"
-        Title="Главная страница" Height="450" Width="800">
+        Title="Главная страница Госавтоинспекции" Height="237" Width="734" Style="{StaticResource StyleWindow}">
     <Grid>
-        <Button FontSize="16" x:Name="InspectorGo" Content="Войти как инспектор" HorizontalAlignment="Left" Margin="300,175,0,0" VerticalAlignment="Top" Width="207" Height="68" Click="InspectorGo_Click"/>
+        <Button x:Name="InspectorGo" Content="Войти как инспектор" HorizontalAlignment="Left" Margin="250,27,0,0" VerticalAlignment="Top" Width="222" Height="68" Click="InspectorGo_Click" Background="#FF165B84" Foreground="White"/>
+        <Button x:Name="CheckFin" Content="Проверить штрафы" HorizontalAlignment="Left" Margin="15,112,0,0" VerticalAlignment="Top" Width="215" Height="68" Click="CheckFin_Click"/>
+        <Button x:Name="CheckLicenseDriver" Content="Проверить статус ВУ" HorizontalAlignment="Left" Margin="490,27,0,0" VerticalAlignment="Top" Width="215" Height="68" Click="CheckLicenseDriver_Click"/>
+        <Button x:Name="CheckDriver" Content="Проверка водителя" HorizontalAlignment="Left" Margin="15,27,0,0" VerticalAlignment="Top" Width="215" Height="68" Click="CheckDriver_Click"/>
+        <Button x:Name="CheckTransport" Content="Проверка автомобиля"  HorizontalAlignment="Left" Margin="490,112,0,0" VerticalAlignment="Top" Width="215" Height="68" Click="CheckTransport_Click"/>
+        <Button x:Name="Exit" Content="Выход" HorizontalAlignment="Left" Margin="250,112,0,0" VerticalAlignment="Top" Width="222" Height="68" Click="Exit_Click"/>
 
     </Grid>
 </Window>

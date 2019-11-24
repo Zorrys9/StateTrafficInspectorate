@@ -34,6 +34,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -173,11 +174,83 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Inspector\AddLicense.xaml.cs">
+      <DependentUpon>AddLicense.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspector\AddNewInspector.xaml.cs">
+      <DependentUpon>AddNewInspector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspector\CurrentInspector.xaml.cs">
+      <DependentUpon>CurrentInspector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspector\Driver\AddInsurance.xaml.cs">
+      <DependentUpon>AddInsurance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspector\Driver\ChangeDriver.xaml.cs">
+      <DependentUpon>ChangeDriver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspector\Driver\ChangeStatus.xaml.cs">
+      <DependentUpon>ChangeStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspector\Driver\Fine.xaml.cs">
+      <DependentUpon>Fine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspector\Driver\NewFine.xaml.cs">
+      <DependentUpon>NewFine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspector\InspectorList.xaml.cs">
+      <DependentUpon>InspectorList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspector\Transport\AddTransport.xaml.cs">
+      <DependentUpon>AddTransport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspector\Transport\CurrentTransport.xaml.cs">
+      <DependentUpon>CurrentTransport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspector\Transport\TransportList.xaml.cs">
+      <DependentUpon>TransportList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UnRegisteredUser\CheckDriver.xaml.cs">
+      <DependentUpon>CheckDriver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UnRegisteredUser\CheckFine.xaml.cs">
+      <DependentUpon>CheckFine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UnRegisteredUser\CheckLicenseDriver.xaml.cs">
+      <DependentUpon>CheckLicenseDriver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UnRegisteredUser\CheckTransport.xaml.cs">
+      <DependentUpon>CheckTransport.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Inspector\AddLicense.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspector\AddNewInspector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Inspector\AuthorizationInspector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Inspector\CurrentInspector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Inspector\Driver\AddDriverWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspector\Driver\AddInsurance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspector\Driver\ChangeDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspector\Driver\ChangeStatus.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -189,7 +262,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Inspector\Driver\Fine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspector\Driver\NewFine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspector\InspectorList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Inspector\InspectorMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspector\Transport\AddTransport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspector\Transport\CurrentTransport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspector\Transport\TransportList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -220,6 +317,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resources\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UnRegisteredUser\CheckDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UnRegisteredUser\CheckFine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UnRegisteredUser\CheckLicenseDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UnRegisteredUser\CheckTransport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -253,6 +370,9 @@
       <Project>{30078c38-9634-48e6-bc4a-85dffd0d6ff0}</Project>
       <Name>Logic</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gibdd.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

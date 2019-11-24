@@ -26,8 +26,6 @@ namespace DataBase.EntityModels
         [StringLength(50)]
         public string Model { get; set; }
 
-        public int TypeTransport { get; set; }
-
         public int CategoryTransport { get; set; }
 
         [Required]
@@ -58,7 +56,7 @@ namespace DataBase.EntityModels
 
         public double Weight { get; set; }
 
-        public int TypeEngine { get; set; }
+        public int Color { get; set; }
 
         [StringLength(100)]
         public string Description { get; set; }
@@ -81,6 +79,5 @@ namespace DataBase.EntityModels
 
         public virtual TypeOfDriveEntityModels TypeOfDrive1 { get; set; }
 
-        public virtual TypeTransportEntityModels TypeTransport1 { get; set; }
     }
 }

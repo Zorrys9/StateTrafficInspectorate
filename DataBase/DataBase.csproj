@@ -61,7 +61,6 @@
     <Compile Include="EntityModels\StatusLicenseEntityModels.cs" />
     <Compile Include="EntityModels\TransportEntityModels.cs" />
     <Compile Include="EntityModels\TypeOfDriveEntityModels.cs" />
-    <Compile Include="EntityModels\TypeTransportEntityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

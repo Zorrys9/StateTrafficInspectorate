@@ -1,0 +1,24 @@
+﻿<Window x:Class="StateTrafficInspectorate.Inspector.Driver.Fine"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector.Driver"
+        mc:Ignorable="d"
+        Title="Список штрафов" Height="387" Width="744">
+    <Grid>
+        <DataGrid HorizontalAlignment="Left" Height="210" Margin="10,10,0,0" VerticalAlignment="Top" Width="700">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ФИО" Width="200"/>
+                <DataGridTextColumn Header="Причина штрафа" Width="200"/>
+                <DataGridTextColumn Header="Дата" Width="100"/>
+                <DataGridTextColumn Header="Сумма штрафа" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Назад" FontSize="16" x:Name="Back" HorizontalAlignment="Left" Margin="599,235,0,0" VerticalAlignment="Top" Width="111" Height="50" Click="Back_Click"/>
+        <Button Content="Назначить штраф" FontSize="16" x:Name="NewDriver" HorizontalAlignment="Left" Margin="424,235,0,0" VerticalAlignment="Top" Width="151" Height="50" Click="NewFine_Click" RenderTransformOrigin="-0.444,-1.6"/>
+        <Label Content="ФИО нарушителя" HorizontalAlignment="Left" Margin="105,295,0,0" VerticalAlignment="Top" Height="35" Width="156"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="266,295,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="444"/>
+
+    </Grid>
+</Window>

@@ -87,5 +87,12 @@ namespace StateTrafficInspectorate.Inspector.Driver
                 ImageURL.Text = FileDialog.FileName;
             }
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            DriverList driverList = new DriverList();
+            driverList.Show();
+            this.Close();
+        }
     }
 }

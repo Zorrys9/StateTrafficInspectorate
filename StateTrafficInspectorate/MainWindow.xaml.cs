@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using IdentityModel.Client;
 using Microsoft.Win32;
 using StateTrafficInspectorate.Inspector;
+using StateTrafficInspectorate.UnRegisteredUser;
 
 namespace StateTrafficInspectorate
 {
@@ -44,6 +45,39 @@ namespace StateTrafficInspectorate
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void CheckDriver_Click(object sender, RoutedEventArgs e)
+        {
+            CheckDriver driver = new CheckDriver();
+            driver.Show();
+            this.Close();
+        }
+
+        private void CheckFin_Click(object sender, RoutedEventArgs e)
+        {
+            CheckFine Fine = new CheckFine();
+            Fine.Show();
+            this.Close();
+        }
+
+        private void CheckLicenseDriver_Click(object sender, RoutedEventArgs e)
+        {
+            CheckLicenseDriver License = new CheckLicenseDriver();
+            License.Show();
+            this.Close();
+        }
+
+        private void CheckTransport_Click(object sender, RoutedEventArgs e)
+        {
+            CheckTransport Transport = new CheckTransport();
+            Transport.Show();
+            this.Close();
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
