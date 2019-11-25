@@ -7,18 +7,10 @@
         mc:Ignorable="d"
         Title="Список автомобилей" Height="492" Width="799">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="330" Margin="10,10,0,0" VerticalAlignment="Top" Width="772">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ФИО владельца" Width="150"/>
-                <DataGridTextColumn Header="Марка" Width="150"/>
-                <DataGridTextColumn Header="VIN код" Width="150"/>
-                <DataGridTextColumn Header="Привод" Width="150"/>
-                <DataGridTextColumn Header="Год производства" Width="172"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <DataGrid x:Name="Transports" HorizontalAlignment="Left" Height="330" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" Loaded="TransportList_Loaded" MouseDoubleClick="TransportList_MouseDoubleClick"/>
         <Button Content="Назад" FontSize="16" x:Name="Back" HorizontalAlignment="Left" Margin="673,360,0,0" VerticalAlignment="Top" Width="111" Height="50" Click="Back_Click"/>
         <Button Content="Новый автомобиль" FontSize="16" x:Name="NewDriver" HorizontalAlignment="Left" Margin="517,360,0,0" VerticalAlignment="Top" Width="151" Height="50" Click="NewDriver_Click"/>
-        <TextBlock Foreground="Red" HorizontalAlignment="Left" Margin="10,360,0,0" TextWrapping="Wrap" Text="Для просмотра подробной информации об автомобиле нажмите на него 2 раза" VerticalAlignment="Top" Height="96" Width="195" TextAlignment="Center" MouseMove="TextBlock_MouseMove"/>
+        <TextBlock Foreground="Red" HorizontalAlignment="Left" Margin="10,360,0,0" TextWrapping="Wrap" Text="Для просмотра подробной информации об автомобиле нажмите на него 2 раза" VerticalAlignment="Top" Height="96" Width="195" TextAlignment="Center"/>
         <Label Content="ФИО владельца" HorizontalAlignment="Left" Margin="205,416,0,0" VerticalAlignment="Top" Height="35" Width="130"/>
         <TextBox HorizontalAlignment="Left" Height="25" Margin="340,415,0,-21" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="444"/>
 

@@ -55,8 +55,8 @@ namespace DataBase.EntityModels
         public double MaxLoad { get; set; }
 
         public double Weight { get; set; }
-
-        public int Color { get; set; }
+        [StringLength(50)]
+        public string Color { get; set; }
 
         [StringLength(100)]
         public string Description { get; set; }

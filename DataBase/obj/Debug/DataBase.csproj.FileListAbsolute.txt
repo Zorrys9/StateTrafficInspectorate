@@ -7,7 +7,6 @@ C:\Users\Марина\source\repos\StateTrafficInspectorate\DataBase\bin\Debug\E
 C:\Users\Марина\source\repos\StateTrafficInspectorate\DataBase\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Марина\source\repos\StateTrafficInspectorate\DataBase\bin\Debug\ru\EntityFramework.resources.dll
 C:\Users\Марина\source\repos\StateTrafficInspectorate\DataBase\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
-C:\Users\Марина\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.csprojAssemblyReference.cache
 C:\Users\Марина\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.csproj.CoreCompileInputs.cache
 C:\Users\Марина\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.csproj.CopyComplete
 C:\Users\Марина\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.dll
@@ -25,3 +24,4 @@ C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase
 C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.dll
 C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.pdb
 C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.csprojAssemblyReference.cache
+C:\Users\Марина\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.csprojAssemblyReference.cache

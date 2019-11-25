@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Logic.LogicsModel;
+using Logic.Models;
 
 namespace StateTrafficInspectorate.Inspector.Transport
 {
@@ -24,11 +26,60 @@ namespace StateTrafficInspectorate.Inspector.Transport
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Back_Click(object sender, RoutedEventArgs e)
         {
             TransportList transportList = new TransportList();
             transportList.Show();
             this.Close();
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                CategoryTransport.ItemsSource = LogicCategoryTransport.GetNameCategory();
+                TypeOfDrive.ItemsSource = LogicTypeOfDrive.GetNameType();
+
+                TransportModel transport = LogicTransport.GetCurrentTransport();
+                Manufacturer.Text = transport.Manufacturer;
+                Model.Text = transport.Model;
+                YearTransport.Text = transport.YearTransport;
+                NumberEngine.Text = transport.NumberEngine;
+                ModelEngine.Text = transport.ModelEngine;
+                YearEngine.Text = transport.YearEngine;
+                PowerEngineK.Text = transport.PowerEngineKVT;
+                PowerEngineH.Text = transport.PowerEngineH;
+                MaxLoad.Text = transport.MaxLoad.ToString();
+                Color.Text = transport.Color;
+                VIN.Text = transport.VIN;
+                Description.Text = transport.Description;
+                CategoryTransport.SelectedIndex = transport.CategoryTransport - 1;
+                TypeOfDrive.SelectedIndex = transport.TypeOfDrive - 1;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void GetDriver_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ChangeDriver_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Change_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

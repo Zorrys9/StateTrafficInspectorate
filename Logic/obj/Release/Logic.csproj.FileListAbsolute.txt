@@ -1,0 +1,17 @@
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\bin\Release\Logic.dll.config
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\bin\Release\Logic.dll
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\bin\Release\Logic.pdb
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\bin\Release\DataBase.dll
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\bin\Release\EntityFramework.dll
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\bin\Release\DataBase.pdb
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\bin\Release\DataBase.dll.config
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\bin\Release\EntityFramework.xml
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\bin\Release\ru\EntityFramework.resources.dll
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\bin\Release\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\obj\Release\Logic.csprojAssemblyReference.cache
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\obj\Release\Logic.csproj.CoreCompileInputs.cache
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\obj\Release\Logic.csproj.CopyComplete
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\obj\Release\Logic.dll
+C:\Users\Марина\source\repos\StateTrafficInspectorate\Logic\obj\Release\Logic.pdb

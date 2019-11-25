@@ -52,6 +52,14 @@ namespace Logic.LogicsModel
             return DbContext.db.Drivers.Where(dr => dr.Id == SecurityContext.CurrentDriver).FirstOrDefault();         
         }
 
+        public static int GetIdByPassport(string passport)
+        {
+            var id = DbContext.db.Drivers.Where(dr => dr.SerialPasp == passport.Substring(0, 4) && dr.NumberPasp == passport.Substring(4, 6));
+            if (id.Count() > 0)
+                return id.FirstOrDefault().Id;
+            else return 0;
+        }
+
         static string CheckPhone(string phone)
         {
             Regex regexPhone = new Regex(@"^[0-9]+$");

@@ -13,6 +13,5 @@
         <Button x:Name="CheckDriver" Content="Проверка водителя" HorizontalAlignment="Left" Margin="15,27,0,0" VerticalAlignment="Top" Width="215" Height="68" Click="CheckDriver_Click"/>
         <Button x:Name="CheckTransport" Content="Проверка автомобиля"  HorizontalAlignment="Left" Margin="490,112,0,0" VerticalAlignment="Top" Width="215" Height="68" Click="CheckTransport_Click"/>
         <Button x:Name="Exit" Content="Выход" HorizontalAlignment="Left" Margin="250,112,0,0" VerticalAlignment="Top" Width="222" Height="68" Click="Exit_Click"/>
-
     </Grid>
 </Window>

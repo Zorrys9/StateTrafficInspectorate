@@ -10,5 +10,6 @@ namespace Logic
     {
         public static int IdUser;
         public static int CurrentDriver;
+        public static int CurrentTransport;
     }
 }

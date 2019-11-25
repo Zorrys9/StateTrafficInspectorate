@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using Logic.LogicsModel;
 namespace StateTrafficInspectorate.Inspector.Transport
 {
     /// <summary>
@@ -23,7 +24,7 @@ namespace StateTrafficInspectorate.Inspector.Transport
         {
             InitializeComponent();
         }
-
+        DataTable dtTransport = new DataTable();
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             InspectorMainWindow inspector = new InspectorMainWindow();
@@ -37,12 +38,23 @@ namespace StateTrafficInspectorate.Inspector.Transport
             addTransport.Show();
             this.Close();
         }
-
-        private void TextBlock_MouseMove(object sender, MouseEventArgs e)
+        private void TransportList_Loaded(object sender, RoutedEventArgs e)
         {
-            CurrentTransport currentTransport = new CurrentTransport();
-            currentTransport.Show();
-            this.Close();
+            dtTransport = LogicTransport.GetTransportList();
+            Transports.ItemsSource = dtTransport.DefaultView;
+        }
+
+        private void TransportList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if(Transports.SelectedCells.Count() > 0)
+            {
+
+                LogicTransport.CurrentTransport(dtTransport.Rows[Transports.SelectedIndex].ItemArray[4].ToString());
+
+                CurrentTransport currentTransport = new CurrentTransport();
+                currentTransport.Show();
+                this.Close();
+            }
         }
     }
 }

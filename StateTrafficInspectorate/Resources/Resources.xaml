@@ -4,10 +4,11 @@
         <Setter Property="Grid.Background" Value="#FFDFF0FA" />
     </Style>
     <Style x:Key="StyleWindow" TargetType="{x:Type Window}">
-        <!--<Setter Property="WindowStyle" Value="None"/>
+        <!--
+        <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="ResizeMode" Value="NoResize"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter  />-->
+        -->
     </Style>
     <Style TargetType="Button">
         <Setter Property="FontSize" Value="18"/>
