@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Logic.ViewModels;
 using Logic.Models;
 using System.Text.RegularExpressions;
-
+using DataBase.EntityModels;
 namespace Logic.LogicsModel
 {
     public class DriverLogic
@@ -51,7 +51,7 @@ namespace Logic.LogicsModel
 
         public static void CurrentDriver(string pasp)
         {
-            SecurityContext.CurrentDriver = DbContext.db.Drivers.Where(dr => dr.SerialPasp == pasp.Substring(0, 4) && dr.NumberPasp == pasp.Substring(5, 6)).FirstOrDefault().Id;
+            SecurityContext.CurrentDriver = DbContext.db.Drivers.Where(dr => dr.SerialPasp == pasp.Substring(0, 4) && dr.NumberPasp == pasp.Substring(4, 6)).FirstOrDefault().Id;
         }
         public static void ClearCurrentDriver()
         {
@@ -69,6 +69,28 @@ namespace Logic.LogicsModel
             if (id.Count() > 0)
                 return id.FirstOrDefault().Id;
             else return 0;
+        }
+
+        public static void ChangeDriver(DriverModel driver)
+        {
+            DriversEntityModels CurrentDriver = DbContext.db.Drivers.Find(SecurityContext.CurrentDriver);
+            CurrentDriver.FirstName = driver.FirstName;
+            CurrentDriver.LastName = driver.LastName;
+            CurrentDriver.Patronymic = driver.Patronymic;
+            CurrentDriver.Telephone = "+7" + CheckPhone(driver.Telephone.Substring(2,10));
+            CurrentDriver.Email = CheckEmail(driver.Email);
+            CurrentDriver.SerialPasp = driver.SerialPasp;
+            CurrentDriver.NumberPasp = driver.NumberPasp;
+            CurrentDriver.DateBirth = driver.DateBirth;
+            CurrentDriver.DrivingExperience = driver.DrivingExperience;
+            CurrentDriver.FullAddress = driver.FullAddress;
+            CurrentDriver.FullAddressLife = driver.FullAddressLife;
+            CurrentDriver.PostCode = driver.PostCode;
+            CurrentDriver.Company = driver.Company;
+            CurrentDriver.JobName = driver.JobName;
+            CurrentDriver.Photo = driver.Photo;
+            DbContext.db.Drivers.Create();
+            DbContext.db.SaveChanges();
         }
 
         static string CheckPhone(string phone)

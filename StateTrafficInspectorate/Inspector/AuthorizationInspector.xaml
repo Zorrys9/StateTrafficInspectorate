@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector"
         mc:Ignorable="d"
         Title="Авторизация" Height="196.9" Width="378.8" Style="{StaticResource StyleWindow}">
-    <Grid Background="#FFDFF0FA">
+    <Grid>
         <Button Content="Вход" FontSize="18" HorizontalAlignment="Left" Margin="210,85,0,0" TabIndex="3" VerticalAlignment="Top" Width="137" Height="55" Click="Authorization_Click"/>
         <Label Content="Логин" FontSize="16" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top"/>
         <Label Content="Пароль" FontSize="16" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>

@@ -23,5 +23,4 @@ C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\bin\Debug\ru\Entit
 C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.csproj.CopyComplete
 C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.dll
 C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.pdb
-C:\Users\sasch\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.csprojAssemblyReference.cache
 C:\Users\Марина\source\repos\StateTrafficInspectorate\DataBase\obj\Debug\DataBase.csprojAssemblyReference.cache

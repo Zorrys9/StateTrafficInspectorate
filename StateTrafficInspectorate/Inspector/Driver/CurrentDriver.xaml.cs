@@ -17,6 +17,7 @@ using Logic.Models;
 using Logic.OtherLogic;
 using Microsoft.Win32;
 using System.IO;
+using Logic;
 
 namespace StateTrafficInspectorate.Inspector.Driver
 {
@@ -30,9 +31,9 @@ namespace StateTrafficInspectorate.Inspector.Driver
             InitializeComponent();
         }
 
+        public DriverModel Currentdriver = new DriverModel();
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            DriverLogic.ClearCurrentDriver();
             DriverList driver = new DriverList();
             driver.Show();
             this.Close();
@@ -42,8 +43,9 @@ namespace StateTrafficInspectorate.Inspector.Driver
         {
             try
             {
+                PhotoURL.Text = "";
                 DriverViewModel driver = DriverLogic.GetCurrentDriver();
-
+                Currentdriver.Photo = driver.Photo;
                 if(driver.Photo != null)
                 {
                     borderImage.BorderBrush = Brushes.White;
@@ -74,11 +76,16 @@ namespace StateTrafficInspectorate.Inspector.Driver
         {
             try
             {
-                DriverLogic.DeleteDriver();
-                MessageBox.Show("Водитель успешно удален!");
-                DriverList driverList = new DriverList();
-                driverList.Show();
-                this.Close();
+                MessageBoxResult message = MessageBox.Show("Вы уверены, что хотите удалить данного пользователя?", "Удаление водителя", MessageBoxButton.YesNo);
+                if(message == MessageBoxResult.Yes)
+                {
+                    DriverLogic.DeleteDriver();
+                    MessageBox.Show("Водитель успешно удален!");
+                    DriverList driverList = new DriverList();
+                    driverList.Show();
+                    this.Close();
+                }
+
             }
             catch(Exception ex)
             {
@@ -88,30 +95,48 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
         private void ChangeDriver_Click(object sender, RoutedEventArgs e)
         {
-            if (Name.Text.Where(nam => nam == ' ').Count() == 2)
+            try
             {
-                string[] NameArray = new string[2];
-                NameArray = Name.Text.Split(' ');
-
-                DriverModel driver = new DriverModel
+                if (Name.Text.Where(nam => nam == ' ').Count() == 2)
                 {
-                    FirstName = NameArray[0],
-                    LastName = NameArray[1],
-                    Patronymic = NameArray[2],
-                    Telephone = Phone.Text,
-                    Email = Mail.Text,
-                    SerialPasp = Passport.Text.Substring(0,4),
-                    NumberPasp = Passport.Text.Substring(4,6),
-                    DateBirth = DateBirth.SelectedDate.Value,
-                    DrivingExperience = int.Parse(Expirience.Text),
-                    FullAddressLife = AddressLife.Text,
-                    FullAddress = Address.Text,
-                    PostCode = int.Parse(PostCode.Text),
-                    Company = Company.Text,
-                    JobName = JobName.Text
-                };
+                    string[] NameArray = new string[2];
+                    NameArray = Name.Text.Split(' ');
+
+                    DriverModel driver = new DriverModel
+                    {
+                        FirstName = NameArray[0],
+                        LastName = NameArray[1],
+                        Patronymic = NameArray[2],
+                        Telephone = Phone.Text,
+                        Email = Mail.Text,
+                        SerialPasp = Passport.Text.Substring(0, 4),
+                        NumberPasp = Passport.Text.Substring(4, 6),
+                        DateBirth = DateBirth.SelectedDate.Value,
+                        DrivingExperience = int.Parse(Expirience.Text),
+                        FullAddressLife = AddressLife.Text,
+                        FullAddress = Address.Text,
+                        PostCode = int.Parse(PostCode.Text),
+                        Company = Company.Text,
+                        JobName = JobName.Text,
+                    };
+                    if (PhotoURL.Text != "")
+                        driver.Photo = File.ReadAllBytes(PhotoURL.Text);
+                    else driver.Photo = Currentdriver.Photo;
+                    DriverLogic.ChangeDriver(driver);
+
+                    MessageBox.Show("Водитель успешно изменен!");
+
+                    DriverList driverList = new DriverList();
+                    driverList.Show();
+                    this.Close();
+                }
+                else throw new Exception("ФИО введен не верно!");
             }
-            else throw new Exception("ФИО введен не верно!");
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void ChangeStatus_Click(object sender, RoutedEventArgs e)
@@ -121,15 +146,38 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
         private void Photo_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog file = new OpenFileDialog();
-            file.Filter = "Изображение |*.jpg;*.png;*.jpeg;*.bmp";
-            if (file.ShowDialog() == true)
+            try
             {
+                OpenFileDialog file = new OpenFileDialog
+                {
+                    Filter = "Изображение |*.jpg;*.png;*.jpeg;*.bmp"
+                };
+                if (file.ShowDialog() == true)
+                {
 
-                PhotoURL.Text = file.FileName;
-                ImageDriver.Source = File.WriteAllBytes(new Uri(file.FileName));
+                    PhotoURL.Text = file.FileName;
+                    ImageDriver.Source = ImageLogic.ImageFromByte(File.ReadAllBytes(file.FileName));
 
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            DriverLogic.ClearCurrentDriver();
+        }
+
+        private void ExitAccount_Click(object sender, RoutedEventArgs e)
+        {
+            SecurityContext.IdUser = 0;
+            AuthorizationInspector authorization = new AuthorizationInspector();
+            authorization.Show();
+            this.Close();
         }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector"
         mc:Ignorable="d"
         Title="Главное окно инспектора" Height="487" Width="549" Loaded="Window_Loaded" Style="{StaticResource StyleWindow}">
-    <Grid Background="#FFDFF0FA">
+    <Grid >
         <GroupBox Header="Личная информация" FontSize="16"  HorizontalAlignment="Left" Height="213" Margin="232,12,0,0" VerticalAlignment="Top" Width="288">
             <Label Content="ФИО" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Margin="0,10,0,0" Height="34"/>
         </GroupBox>

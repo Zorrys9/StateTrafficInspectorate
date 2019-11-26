@@ -29,7 +29,7 @@ namespace Logic.ViewModels
             {
                 Name = driver.FirstName + " " + driver.LastName + " " + driver.Patronymic,
                 DateBirth = driver.DateBirth,
-                Passport = driver.SerialPasp + " " + driver.NumberPasp,
+                Passport = driver.SerialPasp + driver.NumberPasp,
                 FullAddress = driver.FullAddress,
                 Telephone = driver.Telephone,
                 DrivingExperience = driver.DrivingExperience,
