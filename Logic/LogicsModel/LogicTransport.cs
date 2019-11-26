@@ -52,5 +52,12 @@ namespace Logic.LogicsModel
             }
             return dtTransport;
         }
+        public static int GetIdByVIN(string vin)
+        {
+            var id = DbContext.db.Transport.Where(tr => tr.VIN == vin);
+            if (id.Count() == 1)
+                return id.FirstOrDefault().Id;
+            else return 0;
+        }
     }
 }

@@ -14,29 +14,29 @@
         <Label Content="Серия ВУ" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top"/>
         <Label Content="Номер ВУ" HorizontalAlignment="Left" Margin="156,154,0,0" VerticalAlignment="Top"/>
         <Label Content="Категории" HorizontalAlignment="Left" Margin="440,10,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="М" FontSize="14" HorizontalAlignment="Left" Margin="423,51,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="D1E" FontSize="14" HorizontalAlignment="Left" Margin="575,51,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="BE" FontSize="14" HorizontalAlignment="Left" Margin="525,51,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="C1E" FontSize="14" HorizontalAlignment="Left" Margin="475,51,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="A" FontSize="14" HorizontalAlignment="Left" Margin="423,74,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="DE" FontSize="14" HorizontalAlignment="Left" Margin="575,74,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="B1" FontSize="14" HorizontalAlignment="Left" Margin="525,74,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="CE" FontSize="14" HorizontalAlignment="Left" Margin="475,74,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="A1" FontSize="14" HorizontalAlignment="Left" Margin="423,95,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="Tm" FontSize="14" HorizontalAlignment="Left" Margin="575,95,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="C" FontSize="14" HorizontalAlignment="Left" Margin="525,95,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="D" FontSize="14" HorizontalAlignment="Left" Margin="475,95,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="B" FontSize="14" HorizontalAlignment="Left" Margin="423,118,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="Tb" FontSize="14" HorizontalAlignment="Left" Margin="575,118,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="C1" FontSize="14" HorizontalAlignment="Left" Margin="525,118,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="D1" FontSize="14" HorizontalAlignment="Left" Margin="475,118,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="256,14,0,0" TextWrapping="Wrap" Text="1234567890" VerticalAlignment="Top" Width="104"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="193,50,0,0" TextWrapping="Wrap" Text="1234567890ABEHPDS" VerticalAlignment="Top" Width="167"/>
-        <DatePicker HorizontalAlignment="Left" Margin="193,87,0,0" VerticalAlignment="Top"/>
-        <DatePicker HorizontalAlignment="Left" Margin="193,121,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="243,158,0,0" TextWrapping="Wrap" Text="363454" VerticalAlignment="Top" Width="117"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="93,158,0,0" TextWrapping="Wrap" Text="3634" VerticalAlignment="Top" Width="58"/>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="399,205,0,0" VerticalAlignment="Top" Width="106" RenderTransformOrigin="1.107,0.714" Height="41"/>
+        <CheckBox x:Name="M" Content="М" FontSize="14" HorizontalAlignment="Left" Margin="423,51,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="D1E" Content="D1E" FontSize="14" HorizontalAlignment="Left" Margin="575,51,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="BE" Content="BE" FontSize="14" HorizontalAlignment="Left" Margin="525,51,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="C1E" Content="C1E" FontSize="14" HorizontalAlignment="Left" Margin="475,51,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="A" Content="A" FontSize="14" HorizontalAlignment="Left" Margin="423,74,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="DE" Content="DE" FontSize="14" HorizontalAlignment="Left" Margin="575,74,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="B1" Content="B1" FontSize="14" HorizontalAlignment="Left" Margin="525,74,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CE" Content="CE" FontSize="14" HorizontalAlignment="Left" Margin="475,74,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="A1" Content="A1" FontSize="14" HorizontalAlignment="Left" Margin="423,95,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="Tm" Content="Tm" FontSize="14" HorizontalAlignment="Left" Margin="575,95,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="C" Content="C" FontSize="14" HorizontalAlignment="Left" Margin="525,95,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="D" Content="D" FontSize="14" HorizontalAlignment="Left" Margin="475,95,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="B" Content="B" FontSize="14" HorizontalAlignment="Left" Margin="423,118,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="Tb" Content="Tb" FontSize="14" HorizontalAlignment="Left" Margin="575,118,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="C1" Content="C1" FontSize="14" HorizontalAlignment="Left" Margin="525,118,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="D1" Content="D1" FontSize="14" HorizontalAlignment="Left" Margin="475,118,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="PassportDriver" MaxLength="10" HorizontalAlignment="Left" Height="23" Margin="256,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" SelectionChanged="PassportDriver_SelectionChanged"/>
+        <TextBox x:Name="VIN" MaxLength="17" HorizontalAlignment="Left" Height="23" Margin="193,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" SelectionChanged="VIN_SelectionChanged"/>
+        <DatePicker x:Name="LicenseDate" HorizontalAlignment="Left" Margin="193,87,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="ExpireDate" HorizontalAlignment="Left" Margin="193,121,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Number" MaxLength="6" HorizontalAlignment="Left" Height="23" Margin="243,158,0,0" TextWrapping="Wrap" Text="363454" VerticalAlignment="Top" Width="117"/>
+        <TextBox x:Name="Series" MaxLength="4" HorizontalAlignment="Left" Height="23" Margin="93,158,0,0" TextWrapping="Wrap" Text="3634" VerticalAlignment="Top" Width="58"/>
+        <Button x:Name="Add" IsEnabled="False" Content="Добавить" HorizontalAlignment="Left" Margin="399,205,0,0" VerticalAlignment="Top" Width="106" RenderTransformOrigin="1.107,0.714" Height="41" Click="Add_Click"/>
         <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Margin="525,205,0,0" VerticalAlignment="Top" Width="106" RenderTransformOrigin="1.107,0.714" Height="41" Click="Back_Click"/>
     </Grid>
 </Window>

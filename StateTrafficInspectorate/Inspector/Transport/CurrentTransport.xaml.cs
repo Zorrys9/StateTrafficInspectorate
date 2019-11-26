@@ -55,6 +55,7 @@ namespace StateTrafficInspectorate.Inspector.Transport
                 Description.Text = transport.Description;
                 CategoryTransport.SelectedIndex = transport.CategoryTransport - 1;
                 TypeOfDrive.SelectedIndex = transport.TypeOfDrive - 1;
+
             }
             catch(Exception ex)
             {

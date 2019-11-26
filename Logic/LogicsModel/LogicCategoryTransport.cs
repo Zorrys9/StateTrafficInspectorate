@@ -15,7 +15,7 @@ namespace Logic.LogicsModel
             List<string> NameList = new List<string>();
             foreach(var name in ListQuery)
             {
-                NameList.Add(name.Name);
+                NameList.Add(name.Name + name.Id.ToString());
             }
             return NameList;
         }

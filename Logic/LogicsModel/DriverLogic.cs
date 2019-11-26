@@ -33,7 +33,14 @@ namespace Logic.LogicsModel
             }
             return dt;
         }
+        public static void DeleteDriver()
+        {
+            DbContext.db.Drivers.Remove(DbContext.db.Drivers.Where(dr => dr.Id == SecurityContext.CurrentDriver).FirstOrDefault());
+            DbContext.db.SaveChanges();
+        }
 
+
+        
         public static void AddDriver(DriverModel newDriver)
         {
             newDriver.Telephone = "+7" + CheckPhone(newDriver.Telephone);
@@ -45,6 +52,10 @@ namespace Logic.LogicsModel
         public static void CurrentDriver(string pasp)
         {
             SecurityContext.CurrentDriver = DbContext.db.Drivers.Where(dr => dr.SerialPasp == pasp.Substring(0, 4) && dr.NumberPasp == pasp.Substring(5, 6)).FirstOrDefault().Id;
+        }
+        public static void ClearCurrentDriver()
+        {
+            SecurityContext.CurrentDriver = 0;
         }
 
         public static DriverViewModel GetCurrentDriver()
