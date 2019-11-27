@@ -5,45 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector.Transport"
         mc:Ignorable="d"
-        Title="Ифнормация о транспорте" Height="597" Width="794">
+        Title="Ифнормация о транспорте" Height="622.94" Width="728.4" Style="{StaticResource StyleWindow}">
     <Grid Loaded="Grid_Loaded">
-        <Label Content="Марка" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="Модель" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="245,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="Категория транспорта" HorizontalAlignment="Left" Margin="245,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="Год производства" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top"/>
-        <Label Content="Номер двигателя" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
-        <Label Content="Модель двигателя" HorizontalAlignment="Left" Margin="245,130,0,0" VerticalAlignment="Top"/>
-        <Label Content="Год производства двигателя" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top"/>
-        <Label Content="Мощность двигателя :" HorizontalAlignment="Left" Margin="10,202,0,0" VerticalAlignment="Top"/>
-        <Label Content="кВт" HorizontalAlignment="Left" Margin="206,202,0,0" VerticalAlignment="Top"/>
-        <Label Content="Лошадинных сил" HorizontalAlignment="Left" Margin="336,202,0,0" VerticalAlignment="Top"/>
-        <Label Content="Максимальная нагрузка" HorizontalAlignment="Left" Margin="10,238,0,0" VerticalAlignment="Top"/>
-        <Label Content="Цвет" HorizontalAlignment="Left" Margin="10,274,0,0" VerticalAlignment="Top"/>
-        <Label Content="Вес" HorizontalAlignment="Left" Margin="336,274,0,0" VerticalAlignment="Top"/>
-        <Label Content="VIN" HorizontalAlignment="Left" Margin="10,310,0,0" VerticalAlignment="Top"/>
-        <Label Content="Привод" HorizontalAlignment="Left" Margin="10,346,0,0" VerticalAlignment="Top"/>
-        <Label Content="Описание" HorizontalAlignment="Left" Margin="10,395,0,0" VerticalAlignment="Top" Height="38" Width="88"/>
-        <TextBox x:Name="Manufacturer" HorizontalAlignment="Left" Height="26" Margin="90,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
-        <TextBox x:Name="Model" HorizontalAlignment="Left" Height="26" Margin="90,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327"/>
-        <TextBox x:Name="YearTransport" HorizontalAlignment="Left" Height="26" Margin="177,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138"/>
-        <TextBox x:Name="NumberEngine" HorizontalAlignment="Left" Height="26" Margin="151,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94"/>
-        <TextBox x:Name="ModelEngine" HorizontalAlignment="Left" Height="26" Margin="410,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94"/>
-        <TextBox x:Name="YearEngine" HorizontalAlignment="Left" Height="26" Margin="245,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94"/>
-        <TextBox x:Name="PowerEngineK" HorizontalAlignment="Left" Height="26" Margin="245,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94"/>
-        <TextBox x:Name="PowerEngineH" HorizontalAlignment="Left" Height="26" Margin="477,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94"/>
-        <TextBox x:Name="MaxLoad"  HorizontalAlignment="Left" Height="26" Margin="206,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94"/>
-        <TextBox x:Name="Color" HorizontalAlignment="Left" Height="26" Margin="146,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
-        <TextBox x:Name="Weight" HorizontalAlignment="Left" Height="26" Margin="386,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
-        <TextBox x:Name="VIN" HorizontalAlignment="Left" Height="26" Margin="74,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
-        <TextBox x:Name="Description" HorizontalAlignment="Left" Height="135" Margin="121,401,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="450"/>
-        <ComboBox x:Name="TypeOfDrive" HorizontalAlignment="Left" SelectedIndex="0"  Margin="90,350,0,0" VerticalAlignment="Top" Width="210"/>
-        <ComboBox x:Name="CategoryTransport" HorizontalAlignment="Left" SelectedIndex="0"  Margin="440,12,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Margin="605,489,0,-5" VerticalAlignment="Top" Width="161" Height="47" Click="Back_Click"/>
-        <Button x:Name="Delete" Content="Удалить" HorizontalAlignment="Left" Height="54" Margin="605,423,0,0" VerticalAlignment="Top" Width="161" Click="Delete_Click"/>
-        <Button IsEnabled="False" x:Name="Change" Content="Изменить" HorizontalAlignment="Left" Height="48" Margin="605,365,0,0" VerticalAlignment="Top" Width="161" Click="Change_Click"/>
-        <Button x:Name="GetDriver" Content="Показать информацию &#xD;&#xA;         о владельце" HorizontalAlignment="Left" Height="69" Margin="565,10,0,0" VerticalAlignment="Top" Width="201" Click="GetDriver_Click"/>
-        <Button x:Name="ChangeDriver" Content="Изменить водителя" HorizontalAlignment="Left" Height="54" Margin="565,99,0,0" VerticalAlignment="Top" Width="201" Click="ChangeDriver_Click"/>
+        <Label Content="Марка" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>
+        <Label Content="Модель" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="245,47,0,0" VerticalAlignment="Top"/>
+        <Label Content="Категория транспорта" HorizontalAlignment="Left" Margin="245,47,0,0" VerticalAlignment="Top"/>
+        <Label Content="Год производства" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top"/>
+        <Label Content="Номер двигателя" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top"/>
+        <Label Content="Модель двигателя" HorizontalAlignment="Left" Margin="245,167,0,0" VerticalAlignment="Top"/>
+        <Label Content="Год производства двигателя" HorizontalAlignment="Left" Margin="10,203,0,0" VerticalAlignment="Top"/>
+        <Label Content="Мощность двигателя :" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top"/>
+        <Label Content="кВт" HorizontalAlignment="Left" Margin="206,239,0,0" VerticalAlignment="Top"/>
+        <Label Content="Лошадинных сил" HorizontalAlignment="Left" Margin="336,239,0,0" VerticalAlignment="Top"/>
+        <Label Content="Максимальная нагрузка" HorizontalAlignment="Left" Margin="10,275,0,0" VerticalAlignment="Top"/>
+        <Label Content="Цвет" HorizontalAlignment="Left" Margin="10,311,0,0" VerticalAlignment="Top"/>
+        <Label Content="Вес" HorizontalAlignment="Left" Margin="336,311,0,0" VerticalAlignment="Top"/>
+        <Label Content="VIN" HorizontalAlignment="Left" Margin="10,347,0,0" VerticalAlignment="Top"/>
+        <Label Content="Привод" HorizontalAlignment="Left" Margin="10,383,0,0" VerticalAlignment="Top"/>
+        <Label Content="Описание" HorizontalAlignment="Left" Margin="10,432,0,0" VerticalAlignment="Top" Height="38" Width="88"/>
+        <TextBox x:Name="Manufacturer" HorizontalAlignment="Left" Height="26" Margin="90,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="Model" HorizontalAlignment="Left" Height="26" Margin="90,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327"/>
+        <TextBox x:Name="YearTransport" HorizontalAlignment="Left" Height="26" Margin="177,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138"/>
+        <TextBox x:Name="NumberEngine" HorizontalAlignment="Left" Height="26" Margin="151,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="ModelEngine" HorizontalAlignment="Left" Height="26" Margin="410,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="YearEngine" HorizontalAlignment="Left" Height="26" Margin="245,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="PowerEngineK" HorizontalAlignment="Left" Height="26" Margin="245,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="PowerEngineH" HorizontalAlignment="Left" Height="26" Margin="477,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="MaxLoad"  HorizontalAlignment="Left" Height="26" Margin="206,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="Color" HorizontalAlignment="Left" Height="26" Margin="146,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
+        <TextBox x:Name="Weight" HorizontalAlignment="Left" Height="26" Margin="386,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
+        <TextBox x:Name="VIN" HorizontalAlignment="Left" Height="26" Margin="74,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
+        <TextBox x:Name="Description" HorizontalAlignment="Left" Height="135" Margin="121,438,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="450"/>
+        <ComboBox x:Name="TypeOfDrive" HorizontalAlignment="Left" SelectedIndex="0"  Margin="90,387,0,0" VerticalAlignment="Top" Width="210"/>
+        <ComboBox x:Name="CategoryTransport" HorizontalAlignment="Left" SelectedIndex="0"  Margin="440,49,0,0" VerticalAlignment="Top" Width="100"/>
+        <Menu HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="780">
+            <MenuItem Header="Работа с транспортом" Height="30" Width="159">
+                <MenuItem Header="Изменить" Click="Change_Click" Height="30" Width="159"/>
+                <MenuItem Header="Удалить" Click="Delete_Click" Height="30" Width="159"/>
+            </MenuItem>
+            <MenuItem Header="Показать инфо о владельце" Click="GetDriver_Click" Height="30" Width="209"/>
+            <MenuItem Header="Изменить владельца" Click="ChangeDriver_Click" Height="30" Width="155"/>
+            <MenuItem Header="Назад" Height="30" Click="Back_Click" Width="62"/>
+            <MenuItem Header="Выход из аккаунта" Height="30" Click="ExitAccount_Click" Width="194"/>
+        </Menu>
 
     </Grid>
 </Window>

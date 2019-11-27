@@ -12,7 +12,7 @@
         <Button Content="Новый водитель" FontSize="16" x:Name="NewDriver" HorizontalAlignment="Left" Margin="517,360,0,0" VerticalAlignment="Top" Width="151" Height="50" Click="NewDriver_Click"/>
         <TextBlock Foreground="Red" HorizontalAlignment="Left" Margin="10,360,0,0" TextWrapping="Wrap" Text="Для просмотра карточки водителя нажмите на него 2 раза" VerticalAlignment="Top" Height="96" Width="140" TextAlignment="Center"/>
         <Label Content="ФИО водителя" HorizontalAlignment="Left" Margin="200,415,0,0" VerticalAlignment="Top" Height="35" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="340,415,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="444"/>
+        <TextBox x:Name="NameDriver" HorizontalAlignment="Left" Height="25" Margin="340,415,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="444" TextChanged="NameDriver_TextChanged"/>
 
     </Grid>
 </Window>

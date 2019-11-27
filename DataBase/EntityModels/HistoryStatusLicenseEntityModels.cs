@@ -22,6 +22,8 @@ namespace DataBase.EntityModels
         [Required]
         [StringLength(100)]
         public string Descriptoin { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime DateChange { get; set; }
 
         public virtual InspectorEntityModel Inspector { get; set; }
 

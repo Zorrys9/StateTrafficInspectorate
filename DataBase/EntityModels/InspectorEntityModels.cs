@@ -36,7 +36,15 @@ namespace DataBase.EntityModels
         [Required]
         [StringLength(50)]
         public string Password { get; set; }
+        [Required]
+        [StringLength(4)]
+        public string PasportSeries { get; set; }
+        [Required]
+        [StringLength(6)]
+        public string PasportNumber { get; set; }
 
+        [Column(TypeName = "date")]
+        public DateTime DateBirth { get; set; }
         public int? Position { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

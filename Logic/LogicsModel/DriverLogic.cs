@@ -25,14 +25,20 @@ namespace Logic.LogicsModel
             dt.Columns.Add("Email");
 
             DriverViewModel driverView;
-            var ListDriver = DbContext.db.Drivers;
-            foreach(var driver in ListDriver)
+            var ListDriver = DbContext.db.Drivers.Where( dr=> dr != null);
+            if (SecurityContext.CurrentTransport != 0)
+            {
+                int idDriver = DbContext.db.Transport.Find(SecurityContext.CurrentTransport).IdDriver;
+                ListDriver = ListDriver.Where(driver => driver.Id == idDriver);
+            }
+            foreach (var driver in ListDriver)
             {
                 driverView = driver;
                 dt.Rows.Add(driverView.Name, driverView.DateBirth.ToShortDateString(), driverView.Passport, driverView.FullAddress, driverView.Telephone, driverView.DrivingExperience, driverView.Email);
             }
             return dt;
         }
+
         public static void DeleteDriver()
         {
             DbContext.db.Drivers.Remove(DbContext.db.Drivers.Where(dr => dr.Id == SecurityContext.CurrentDriver).FirstOrDefault());

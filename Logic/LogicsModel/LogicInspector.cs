@@ -2,6 +2,7 @@
 using Logic.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,5 +37,32 @@ namespace Logic.LogicsModel
             return ViewInspector;
         }
 
+        public static int GetPositionInspector()
+        {
+            return (int)DbContext.db.Inspector.Find(SecurityContext.IdUser).Position;
+        }
+
+        public static void CurrentInspector(string pasport)
+        {
+            SecurityContext.CurrentInspector =  DbContext.db.Inspector.Where(ins => ins.PasportSeries == pasport.Substring(0, 4) && ins.PasportNumber == pasport.Substring(4, 6)).FirstOrDefault().Id;
+        }
+
+        public static DataTable GetListInspector()
+        {
+            DataTable dtInspector = new DataTable();
+            dtInspector.Columns.Add("ФИО");
+            dtInspector.Columns.Add("Паспорт");
+            dtInspector.Columns.Add("Логин");
+            dtInspector.Columns.Add("Дата рождения");
+            dtInspector.Columns.Add("Должность");
+
+            var Query = DbContext.db.Inspector;
+
+            foreach(var ins in Query)
+            {
+                dtInspector.Rows.Add(ins.FirstName + " " + ins.LastName + " " + ins.Patronymic, ins.PasportSeries + ins.PasportNumber, ins.Login, ins.DateBirth.ToString(), DbContext.db.Position.Where(pos => pos.Id == ins.Position).FirstOrDefault().Name);
+            }
+            return dtInspector;
+        }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector.Transport"
         mc:Ignorable="d"
-        Title="Новый транспорт" Height="577" Width="784">
+        Title="Новый транспорт" Height="577" Width="784" Style="{StaticResource StyleWindow}">
     <Grid Loaded="Grid_Loaded">
         <Label Content="Марка" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Модель" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top"/>

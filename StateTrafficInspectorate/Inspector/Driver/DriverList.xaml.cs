@@ -83,5 +83,9 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
 
         }
+
+        private void NameDriver_TextChanged(object sender, TextChangedEventArgs e)
+        {
+        }
     }
 }

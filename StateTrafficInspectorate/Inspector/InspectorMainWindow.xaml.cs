@@ -107,5 +107,11 @@ namespace StateTrafficInspectorate.Inspector
             changeStatus.Show();
             this.Close();
         }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (LogicInspector.GetPositionInspector() == 2)
+                InspectorList.Visibility = Visibility;
+        }
     }
 }

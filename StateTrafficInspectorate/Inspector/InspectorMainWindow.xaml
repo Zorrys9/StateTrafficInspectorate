@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector"
         mc:Ignorable="d"
         Title="Главное окно инспектора" Height="487" Width="549" Loaded="Window_Loaded" Style="{StaticResource StyleWindow}">
-    <Grid >
+    <Grid Loaded="Grid_Loaded" >
         <GroupBox Header="Личная информация" FontSize="16"  HorizontalAlignment="Left" Height="213" Margin="232,12,0,0" VerticalAlignment="Top" Width="288">
             <Label Content="ФИО" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Margin="0,10,0,0" Height="34"/>
         </GroupBox>
@@ -18,9 +18,9 @@
         <Button x:Name="ExitAccount" Content="Выход из аккаунта" FontSize="16" HorizontalAlignment="Left" Margin="285,375,0,0" VerticalAlignment="Top" Width="235" Height="51" Click="ExitAccount_Click"/>
         <Button x:Name="AddLicense" Content="Добавить ВУ" FontSize="16" HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top" Width="199" Height="51" Click="AddLicense_Click"/>
         <Button x:Name="ChangeDriverTransport" Content="Изменить владельца&#xD;&#xA;       автомобиля" FontSize="16" HorizontalAlignment="Left" Margin="10,244,0,0" VerticalAlignment="Top" Width="199" Height="51" Click="ChangeDriver_Click"/>
-        <Button x:Name="InspectorList" Content="Список инспекторов" FontSize="16" HorizontalAlignment="Left" Margin="285,309,0,0" VerticalAlignment="Top" Width="235" Height="51" Click="InspectorList_Click"/>
+        <Button x:Name="InspectorList" Visibility="Hidden" Content="Список инспекторов" FontSize="16" HorizontalAlignment="Left" Margin="285,244,0,0" VerticalAlignment="Top" Width="235" Height="51" Click="InspectorList_Click"/>
         <Button x:Name="AddInsurances" Content="Добавить страховку" FontSize="16" HorizontalAlignment="Left" Margin="10,309,0,0" VerticalAlignment="Top" Width="199" Height="51" Click="AddInsurance_Click"/>
         <Button x:Name="AddFine" Content="Назначить штраф" FontSize="16" HorizontalAlignment="Left" Margin="10,375,0,0" VerticalAlignment="Top" Width="199" Height="51" Click="AddFine_Click"/>
-        <Button x:Name="ChangeStatusDriver" Content="Изменить статус водителя" FontSize="16" HorizontalAlignment="Left" Margin="285,244,0,0" VerticalAlignment="Top" Width="235" Height="51" Click="ChangeStatus_Click"/>
+        <Button x:Name="ChangeStatusDriver" Content="Изменить статус водителя" FontSize="16" HorizontalAlignment="Left" Margin="285,309,0,0" VerticalAlignment="Top" Width="235" Height="51" Click="ChangeStatus_Click"/>
     </Grid>
 </Window>

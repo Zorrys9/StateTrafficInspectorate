@@ -16,6 +16,15 @@ namespace Logic.LogicsModel
             DbContext.db.Transport.Add(newTransport);
             DbContext.db.SaveChanges();
         }
+
+        public static void ChangeDriver(string passport)
+        {
+            var IdNextDriver = DbContext.db.Drivers.Where(dr => dr.SerialPasp == passport.Substring(0, 4) && dr.NumberPasp == passport.Substring(4, 6)).FirstOrDefault().Id;
+            var Transport = DbContext.db.Transport.Find(SecurityContext.CurrentTransport);
+            Transport.IdDriver = IdNextDriver;
+            DbContext.db.Transport.Create();
+            DbContext.db.SaveChanges();
+        }
         
         public static void CurrentTransport(string VIN)
         {
@@ -58,6 +67,39 @@ namespace Logic.LogicsModel
             if (id.Count() == 1)
                 return id.FirstOrDefault().Id;
             else return 0;
+        }
+        public static int GetIdDriverByVIN(string vin)
+        {
+            var id = DbContext.db.Transport.Where(tr => tr.VIN == vin);
+            if (id.Count() == 1)
+                return id.FirstOrDefault().IdDriver;
+            else return 0;
+        }
+        public static void DeleteTransport()
+        {
+            DbContext.db.Transport.Remove(DbContext.db.Transport.Find(SecurityContext.CurrentTransport));
+            DbContext.db.SaveChanges();
+        }
+        public static void ChangeTransport(TransportModel transport)
+        {
+            var CurrentTransport = DbContext.db.Transport.Find(SecurityContext.CurrentTransport);
+            CurrentTransport.Manufacturer = transport.Manufacturer;
+            CurrentTransport.Model = transport.Model;
+            CurrentTransport.CategoryTransport = transport.CategoryTransport;
+            CurrentTransport.YearTransport = transport.YearTransport;
+            CurrentTransport.NumberEngine = transport.NumberEngine;
+            CurrentTransport.ModelEngine = transport.ModelEngine;
+            CurrentTransport.YearEngine = transport.YearEngine;
+            CurrentTransport.PowerEngineH = transport.PowerEngineH;
+            CurrentTransport.PowerEngineKVT = transport.PowerEngineKVT;
+            CurrentTransport.MaxLoad = transport.MaxLoad;
+            CurrentTransport.Color = transport.Color;
+            CurrentTransport.Weight = transport.Weight;
+            CurrentTransport.VIN = transport.VIN;
+            CurrentTransport.Description = transport.Description;
+            CurrentTransport.TypeOfDrive = transport.TypeOfDrive;
+            DbContext.db.Transport.Create();
+            DbContext.db.SaveChanges();
         }
     }
 }

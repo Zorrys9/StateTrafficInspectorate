@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,15 @@ namespace Logic.Models
         [Required]
         [StringLength(50)]
         public string Password { get; set; }
+        [Required]
+        [StringLength(4)]
+        public string PasportSeries { get; set; }
+        [Required]
+        [StringLength(6)]
+        public string PasportNumber { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime DateBirth { get; set; }
 
         public int? Position { get; set; }
 

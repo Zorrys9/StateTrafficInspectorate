@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector.Transport"
         mc:Ignorable="d"
-        Title="Список автомобилей" Height="492" Width="799">
+        Title="Список автомобилей" Height="492" Width="799" Style="{StaticResource StyleWindow}">
     <Grid>
         <DataGrid x:Name="Transports" HorizontalAlignment="Left" Height="330" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" Loaded="TransportList_Loaded" MouseDoubleClick="TransportList_MouseDoubleClick"/>
         <Button Content="Назад" FontSize="16" x:Name="Back" HorizontalAlignment="Left" Margin="673,360,0,0" VerticalAlignment="Top" Width="111" Height="50" Click="Back_Click"/>

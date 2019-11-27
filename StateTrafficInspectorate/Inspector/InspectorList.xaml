@@ -5,16 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector"
         mc:Ignorable="d"
-        Title="Список инспекторов" Height="427" Width="644">
-    <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="220" Margin="10,10,0,0" VerticalAlignment="Top" Width="600" MouseDoubleClick="DataGrid_MouseDoubleClick">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ФИО" Width="200"/>
-                <DataGridTextColumn Header="Паспорт" Width="100"/>
-                <DataGridTextColumn Header="Дата рождения" Width="100"/>
-                <DataGridTextColumn Header="Должность" Width="200"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        Title="Список инспекторов" Height="427" Width="644" Style="{StaticResource StyleWindow}">
+    <Grid Loaded="Grid_Loaded">
+        <DataGrid x:Name="ListInspector" HorizontalAlignment="Left" Height="220" Margin="10,10,0,0" VerticalAlignment="Top" Width="600" MouseDoubleClick="InspectorList_MouseDoubleClick"/>
         <Button Content="Назад" FontSize="16" x:Name="Back" HorizontalAlignment="Left" Margin="499,260,0,0" VerticalAlignment="Top" Width="111" Height="50" Click="Back_Click"/>
         <Button Content="Новый инспектор" FontSize="16" x:Name="NewDriver" HorizontalAlignment="Left" Margin="340,260,0,0" VerticalAlignment="Top" Width="151" Height="50" Click="AddInspector_Click"/>
         <TextBlock Foreground="Red" HorizontalAlignment="Left" Margin="10,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="77" Width="230" TextAlignment="Center"><Run Text="Для просмотра "/><Run Text="информации об инспекторе "/><Run Text="нажмите на него 2 раза"/></TextBlock>
