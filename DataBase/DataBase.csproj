@@ -53,6 +53,7 @@
     <Compile Include="DbContext.cs" />
     <Compile Include="EntityModels\CategoryTransportEntityModels.cs" />
     <Compile Include="EntityModels\DriversEntityModels.cs" />
+    <Compile Include="EntityModels\FIneEntityModels.cs" />
     <Compile Include="EntityModels\HistoryStatusLicenseEntityModels.cs" />
     <Compile Include="EntityModels\InspectorEntityModels.cs" />
     <Compile Include="EntityModels\InsurancesEntityModels.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="EntityModels\PositionEntityModels.cs" />
     <Compile Include="EntityModels\StatusLicenseEntityModels.cs" />
     <Compile Include="EntityModels\TransportEntityModels.cs" />
+    <Compile Include="EntityModels\TypeInsurancesEntityModels.cs" />
     <Compile Include="EntityModels\TypeOfDriveEntityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

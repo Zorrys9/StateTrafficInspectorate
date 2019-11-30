@@ -31,10 +31,8 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
             try
             {
-
                 TableDriver = DriverLogic.GetListDrivers();
                 ListDriver.ItemsSource = TableDriver.DefaultView;
-
             }
             catch(Exception ex)
             {
@@ -62,16 +60,13 @@ namespace StateTrafficInspectorate.Inspector.Driver
         {
             try
             {
-
                 if (ListDriver.SelectedCells.Count() > 0)
                 {
-
                     DriverLogic.CurrentDriver(TableDriver.Rows[ListDriver.SelectedIndex].ItemArray[2].ToString());
 
                     CurrentDriver currentDriver = new CurrentDriver();
                     currentDriver.Show();
                     this.Close();
-
                 }
 
             }
@@ -86,6 +81,14 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
         private void NameDriver_TextChanged(object sender, TextChangedEventArgs e)
         {
+           
+            TableDriver = DriverLogic.GetFilterListDrivers(NameDriver.Text);
+            ListDriver.ItemsSource = TableDriver.DefaultView;
+        }
+
+        private void ListDriver_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -53,6 +53,9 @@ namespace Logic.Models
                 Login = inspector.Login,
                 Password = inspector.Password,
                 Position = inspector.Position,
+                PasportSeries = inspector.PasportSeries,
+                PasportNumber = inspector.PasportNumber,
+                DateBirth = inspector.DateBirth
             };
         }
         public static implicit operator InspectorModel(InspectorEntityModel inspector)
@@ -65,6 +68,9 @@ namespace Logic.Models
                 Login = inspector.Login,
                 Password = inspector.Password,
                 Position = inspector.Position,
+                PasportSeries = inspector.PasportSeries,
+                PasportNumber = inspector.PasportNumber,
+                DateBirth = inspector.DateBirth
             };
         }
     }

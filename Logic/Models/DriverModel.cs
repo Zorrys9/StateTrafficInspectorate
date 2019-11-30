@@ -43,8 +43,6 @@ namespace Logic.Models
 
         public int? DrivingExperience { get; set; }
 
-        public int? InsuranceId { get; set; }
-
         public int PostCode { get; set; }
 
         [Required]
@@ -78,7 +76,6 @@ namespace Logic.Models
                 FullAddressLife = driver.FullAddressLife,
                 Telephone = driver.Telephone,
                 DrivingExperience = driver.DrivingExperience,
-                InsuranceId = driver.InsuranceId,
                 PostCode = driver.PostCode,
                 Company = driver.Company,
                 JobName = driver.JobName,
@@ -101,7 +98,6 @@ namespace Logic.Models
                 FullAddressLife = driver.FullAddressLife,
                 Telephone = driver.Telephone,
                 DrivingExperience = driver.DrivingExperience,
-                InsuranceId = driver.InsuranceId,
                 PostCode = driver.PostCode,
                 Company = driver.Company,
                 JobName = driver.JobName,

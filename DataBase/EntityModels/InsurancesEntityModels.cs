@@ -11,7 +11,6 @@ namespace DataBase.EntityModels
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public InsurancesEntityModels()
         {
-            Drivers = new HashSet<DriversEntityModels>();
         }
 
         public int Id { get; set; }
@@ -26,22 +25,17 @@ namespace DataBase.EntityModels
 
         public int IdTransport { get; set; }
 
-        [Required]
-        [StringLength(20)]
-        public string Type { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string PurposeOfUse { get; set; }
+        public int Type { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime InsurancesDate { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime ExpireDate { get; set; }
+        
+        public double Sum { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DriversEntityModels> Drivers { get; set; }
 
         public virtual TransportEntityModels Transport { get; set; }
     }

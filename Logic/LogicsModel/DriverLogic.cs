@@ -39,6 +39,46 @@ namespace Logic.LogicsModel
             return dt;
         }
 
+        public static DataTable GetFilterListDrivers(string name)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ФИО");
+            dt.Columns.Add("Дата рождения");
+            dt.Columns.Add("Паспорт");
+            dt.Columns.Add("Адрес");
+            dt.Columns.Add("Телефон");
+            dt.Columns.Add("Водительский стаж");
+            dt.Columns.Add("Email");
+            string LastName = "";
+            string Patronymic = "";
+            string[] NameArray = name.Split(' ');
+            if(NameArray.Length <= 3)
+            {
+                string FirstName = NameArray[0];
+                if (NameArray.Length > 1) LastName = NameArray[1];
+                if (NameArray.Length > 2) Patronymic = NameArray[2];
+
+                DriverViewModel driverView;
+                var ListDriver = from driver in DbContext.db.Drivers
+                                 where (driver.FirstName.Contains(FirstName) || driver.LastName.Contains(FirstName) || driver.Patronymic.Contains(FirstName))
+                                 && (driver.FirstName.Contains(LastName) || driver.LastName.Contains(LastName) || driver.Patronymic.Contains(LastName))
+                                 && (driver.FirstName.Contains(Patronymic) || driver.LastName.Contains(Patronymic) || driver.Patronymic.Contains(Patronymic))
+                                 select driver;
+                if (SecurityContext.CurrentTransport != 0)
+                {
+                    int idDriver = DbContext.db.Transport.Find(SecurityContext.CurrentTransport).IdDriver;
+                    ListDriver = ListDriver.Where(driver => driver.Id == idDriver);
+                }
+                foreach (var driver in ListDriver)
+                {
+                    driverView = driver;
+                    dt.Rows.Add(driverView.Name, driverView.DateBirth.ToShortDateString(), driverView.Passport, driverView.FullAddress, driverView.Telephone, driverView.DrivingExperience, driverView.Email);
+                }
+            }
+
+
+            return dt;
+        }
         public static void DeleteDriver()
         {
             DbContext.db.Drivers.Remove(DbContext.db.Drivers.Where(dr => dr.Id == SecurityContext.CurrentDriver).FirstOrDefault());

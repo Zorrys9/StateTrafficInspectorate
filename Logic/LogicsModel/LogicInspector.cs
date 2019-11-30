@@ -36,7 +36,16 @@ namespace Logic.LogicsModel
             };
             return ViewInspector;
         }
+        public static void SaveInspector(InspectorModel inspector)
+        {
+            DbContext.db.Inspector.Add(inspector);
+            DbContext.db.SaveChanges();
+        }
 
+        public static InspectorModel GetInfoCurrentInspector()
+        {
+          return DbContext.db.Inspector.Where(ins => ins.Id == SecurityContext.CurrentInspector).FirstOrDefault();
+        }
         public static int GetPositionInspector()
         {
             return (int)DbContext.db.Inspector.Find(SecurityContext.IdUser).Position;

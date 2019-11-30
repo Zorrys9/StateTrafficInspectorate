@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector.Driver"
         mc:Ignorable="d"
-        Title="Изменение статуса ВУ" Height="397" Width="464">
+        Title="Изменение статуса ВУ" Style="{StaticResource StyleWindow}" Height="397" Width="464">
     <Grid Loaded="Grid_Loaded">
         <Label Content="Серия и номер ВУ" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="License" HorizontalAlignment="Left" MaxLength="10" Height="23" Margin="159,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TextChanged="License_TextChanged"/>

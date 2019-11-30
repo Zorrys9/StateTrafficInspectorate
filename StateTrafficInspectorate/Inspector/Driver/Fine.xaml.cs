@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Logic.LogicsModel;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +25,7 @@ namespace StateTrafficInspectorate.Inspector.Driver
         {
             InitializeComponent();
         }
-
+        DataTable dtFine = new DataTable();
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             InspectorMainWindow inspector = new InspectorMainWindow();
@@ -36,6 +38,12 @@ namespace StateTrafficInspectorate.Inspector.Driver
             NewFine newFine = new NewFine();
             newFine.Show();
             this.Close();
+        }
+
+        private void FineList_Loaded(object sender, RoutedEventArgs e)
+        {
+            dtFine = LogicFine.GetListFine();
+            FineList.ItemsSource = dtFine.DefaultView;
         }
     }
 }

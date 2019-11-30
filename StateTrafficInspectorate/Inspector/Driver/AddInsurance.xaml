@@ -5,28 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector.Driver"
         mc:Ignorable="d"
-        Title="Регистрация страховки" Height="407" Width="419">
-    <Grid>
-        <Label Content="Паспортные данные владельца" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="VIN код автомобиля" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="256,14,0,0" TextWrapping="Wrap" Text="1234567890" VerticalAlignment="Top" Width="104"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="193,50,0,0" TextWrapping="Wrap" Text="1234567890ABEHPDS" VerticalAlignment="Top" Width="167"/>
-        <Label Content="Дата регистрации" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top"/>
-        <Label Content="Дата истечения срока" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top"/>
-        <Label Content="Серия" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top"/>
-        <Label Content="Номер" HorizontalAlignment="Left" Margin="156,154,0,0" VerticalAlignment="Top"/>
-        <DatePicker HorizontalAlignment="Left" Margin="193,87,0,0" VerticalAlignment="Top"/>
-        <DatePicker HorizontalAlignment="Left" Margin="193,121,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="243,158,0,0" TextWrapping="Wrap" Text="363454" VerticalAlignment="Top" Width="117"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="93,158,0,0" TextWrapping="Wrap" Text="3634" VerticalAlignment="Top" Width="58"/>
-        <Label Content="Тип страховки" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
-        <Label Content="Сумма" HorizontalAlignment="Left" Margin="10,233,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="130,237,0,0" TextWrapping="Wrap" Text="3634" VerticalAlignment="Top" Width="230"/>
-        <ComboBox HorizontalAlignment="Left" SelectedIndex="0" Margin="131,194,0,0" VerticalAlignment="Top" Width="229">
-            <ComboBoxItem Content="ОСАГО" Height="100" Width="100"/>
-        </ComboBox>
-        <Button Content="Зарегистрировать" HorizontalAlignment="Left" Margin="165,282,0,0" VerticalAlignment="Top" Width="195" Height="58"/>
-        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Margin="10,282,0,0" VerticalAlignment="Top" Width="141" Height="58" Click="Back_Click"/>
+        Title="Регистрация страховки" Style="{StaticResource StyleWindow}" Height="373.083" Width="396.88">
+    <Grid Loaded="Grid_Loaded">
+        <Label Content="VIN код автомобиля" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="VIN" MaxLength="17" HorizontalAlignment="Left" Height="23" Margin="193,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="176" TextChanged="VIN_TextChanged"/>
+        <Label Content="Дата регистрации" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top"/>
+        <Label Content="Дата истечения срока" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top"/>
+        <Label Content="Серия" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top"/>
+        <Label Content="Номер" HorizontalAlignment="Left" Margin="156,114,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="DateInsurance" HorizontalAlignment="Left" Margin="193,47,0,0" VerticalAlignment="Top" Width="176"/>
+        <DatePicker x:Name="DateExpire" HorizontalAlignment="Left" Margin="193,81,0,0" VerticalAlignment="Top" Width="176"/>
+        <TextBox x:Name="Number" HorizontalAlignment="Left" Height="23" Margin="243,119,0,0" TextWrapping="Wrap" Text="363454" VerticalAlignment="Top" Width="126"/>
+        <TextBox x:Name="Series" HorizontalAlignment="Left" Height="23" Margin="69,119,0,0" TextWrapping="Wrap" Text="3634" VerticalAlignment="Top" Width="82"/>
+        <Label Content="Тип страховки" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="Сумма" HorizontalAlignment="Left" Margin="10,193,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Sum" HorizontalAlignment="Left" Height="23" Margin="130,197,0,0" TextWrapping="Wrap" Text="3634" VerticalAlignment="Top" Width="239"/>
+        <ComboBox x:Name="Type" HorizontalAlignment="Left" SelectedIndex="0" Margin="131,154,0,0" VerticalAlignment="Top" Width="238"/>
+        <Button IsEnabled="False" x:Name="Add" Content="Зарегистрировать" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top" Width="195" Height="58" Click="Add_Click"/>
+        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Margin="228,242,0,0" VerticalAlignment="Top" Width="141" Height="58" Click="Back_Click"/>
 
     </Grid>
 </Window>

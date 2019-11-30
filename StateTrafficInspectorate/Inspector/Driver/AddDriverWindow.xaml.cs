@@ -16,7 +16,6 @@ using Logic.Models;
 using Logic.LogicsModel;
 using System.IO;
 using Logic.OtherLogic;
-
 namespace StateTrafficInspectorate.Inspector.Driver
 {
     /// <summary>
@@ -37,7 +36,7 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
                 DriverModel newDriver = new DriverModel()
                 {
-                    FirstName = FirstName.Text,
+                    FirstName = StringType.CheckValid(FirstName.Text),
                     LastName = LastName.Text,
                     Patronymic = Patronymic.Text,
                     SerialPasp = PaspSeries.Text,
@@ -80,9 +79,11 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
         private void Photo_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog FileDialog = new OpenFileDialog();
-            FileDialog.Filter = "Изображение |*.jpg;*.jpeg;*.png;*.bmp";
-            if(FileDialog.ShowDialog() == true)
+            OpenFileDialog FileDialog = new OpenFileDialog
+            {
+                Filter = "Изображение |*.jpg;*.jpeg;*.png;*.bmp"
+            };
+            if (FileDialog.ShowDialog() == true)
             {
                 ImageURL.Text = FileDialog.FileName;
             }

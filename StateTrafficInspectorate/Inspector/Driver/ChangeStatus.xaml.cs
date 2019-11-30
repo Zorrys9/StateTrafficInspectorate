@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Logic.Models;
 using Logic.LogicsModel;
+using Logic;
 
 namespace StateTrafficInspectorate.Inspector.Driver
 {
@@ -62,6 +63,10 @@ namespace StateTrafficInspectorate.Inspector.Driver
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             StatusName.ItemsSource = LogicStatusLicense.GetListNameStatus();
+            if(SecurityContext.CurrentDriver != 0)
+            {
+                var driver = DriverLogic.GetCurrentDriver();
+            }
         }
 
         private void License_TextChanged(object sender, TextChangedEventArgs e)

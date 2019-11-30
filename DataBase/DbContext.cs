@@ -25,7 +25,8 @@ namespace DataBase
         public virtual DbSet<StatusLicenseEntityModels> StatusLicense { get; set; }
         public virtual DbSet<TransportEntityModels> Transport { get; set; }
         public virtual DbSet<TypeOfDriveEntityModels> TypeOfDrive { get; set; }
-
+        public virtual DbSet<TypeInsurancesEntityModels> TypeInsurances { get; set; }
+        public virtual DbSet<FIneEntityModels> FIne { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CategoryTransportEntityModels>()
@@ -49,11 +50,6 @@ namespace DataBase
                 .WithRequired(e => e.Inspector)
                 .HasForeignKey(e => e.IdInspector)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<InsurancesEntityModels>()
-                .HasMany(e => e.Drivers)
-                .WithOptional(e => e.Insurances)
-                .HasForeignKey(e => e.InsuranceId);
 
             modelBuilder.Entity<LicenseEntityModels>()
                 .HasMany(e => e.HistoryStatusLicense)

@@ -48,8 +48,6 @@ namespace DataBase.EntityModels
 
         public int? DrivingExperience { get; set; }
 
-        public int? InsuranceId { get; set; }
-
         public int PostCode { get; set; }
 
         [Required]
@@ -68,8 +66,6 @@ namespace DataBase.EntityModels
 
         [StringLength(100)]
         public string FullAddressLife { get; set; }
-
-        public virtual InsurancesEntityModels Insurances { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LicenseEntityModels> License { get; set; }

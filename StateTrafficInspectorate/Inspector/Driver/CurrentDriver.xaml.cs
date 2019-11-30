@@ -141,7 +141,8 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
         private void ChangeStatus_Click(object sender, RoutedEventArgs e)
         {
-
+            ChangeStatus status = new ChangeStatus();
+            status.Show();
         }
 
         private void Photo_Click(object sender, RoutedEventArgs e)

@@ -26,7 +26,14 @@ namespace Logic.LogicsModel
         public static int GetId(string license)
         {
             var Query = DbContext.db.License.Where(lic => lic.LicenseSeries == license.Substring(0, 4) && lic.LicenseNumber == license.Substring(4, 6));
-            return Query.FirstOrDefault().Id;
+            if (Query.Count() > 0)
+                return Query.FirstOrDefault().Id;
+            else return 0;
+        }
+        public static int GetIdDriver(string license)
+        {
+            var Query = DbContext.db.License.Where(lic => lic.LicenseSeries == license.Substring(0, 4) && lic.LicenseNumber == license.Substring(4, 6));
+            return Query.FirstOrDefault().IdDriver;
         }
         public static void ChangeStatusLicense(StatusChangeModel newStatus)
         {
