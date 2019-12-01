@@ -198,6 +198,12 @@
     <Compile Include="Inspector\Driver\Fine.xaml.cs">
       <DependentUpon>Fine.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Inspector\Driver\FineCurrentDriver.xaml.cs">
+      <DependentUpon>FineCurrentDriver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspector\Driver\LicenseCurrentDriver.xaml.cs">
+      <DependentUpon>LicenseCurrentDriver.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Inspector\Driver\NewFine.xaml.cs">
       <DependentUpon>NewFine.xaml</DependentUpon>
     </Compile>
@@ -209,6 +215,9 @@
     </Compile>
     <Compile Include="Inspector\Transport\CurrentTransport.xaml.cs">
       <DependentUpon>CurrentTransport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspector\Transport\TransportCurrentDriver.xaml.cs">
+      <DependentUpon>TransportCurrentDriver.xaml</DependentUpon>
     </Compile>
     <Compile Include="Inspector\Transport\TransportList.xaml.cs">
       <DependentUpon>TransportList.xaml</DependentUpon>
@@ -269,6 +278,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Inspector\Driver\FineCurrentDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspector\Driver\LicenseCurrentDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Inspector\Driver\NewFine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -286,6 +303,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Inspector\Transport\CurrentTransport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspector\Transport\TransportCurrentDriver.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -373,6 +394,9 @@
       <Project>{30078c38-9634-48e6-bc4a-85dffd0d6ff0}</Project>
       <Name>Logic</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="License.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

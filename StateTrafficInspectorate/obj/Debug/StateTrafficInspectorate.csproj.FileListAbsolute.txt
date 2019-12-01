@@ -285,3 +285,9 @@ C:\Users\Марина\source\repos\StateTrafficInspectorate\StateTrafficInspecto
 C:\Users\Марина\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\UnRegisteredUser\CheckFine.baml
 C:\Users\Марина\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\UnRegisteredUser\CheckLicenseDriver.baml
 C:\Users\Марина\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\UnRegisteredUser\CheckTransport.baml
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\Inspector\Transport\TransportCurrentDriver.g.cs
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\Inspector\Transport\TransportCurrentDriver.baml
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\Inspector\Driver\FineCurrentDriver.g.cs
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\Inspector\Driver\FineCurrentDriver.baml
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\Inspector\Driver\LicenseCurrentDriver.g.cs
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\Inspector\Driver\LicenseCurrentDriver.baml

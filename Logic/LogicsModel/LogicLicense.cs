@@ -1,4 +1,5 @@
 ﻿using Logic.Models;
+using Logic.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,41 @@ namespace Logic.LogicsModel
             DbContext.db.HistoryStatusLicense.Add(newStatus);
             DbContext.db.SaveChanges();
 
+        }
+
+        public static LicenseViewModel GetLicenseModel()
+        {
+            var License = (from license in DbContext.db.License
+                           join driver in DbContext.db.Drivers on license.IdDriver equals driver.Id
+                           where driver.Id == SecurityContext.CurrentDriver
+                           select new
+                           {
+                               driver.FirstName,
+                               LastNamePatr = driver.LastName + " " + driver.Patronymic,
+                               driver.DateBirth,
+                               AddressLife = driver.FullAddressLife,
+                               DateLicense = license.LicenseDate,
+                               DateExpire = license.ExpireDate,
+                               SeriesNumberLicense = license.LicenseSeries.Substring(0, 2) + " " + license.LicenseSeries.Substring(2, 2) + " " + license.LicenseNumber,
+                               Address = driver.FullAddress,
+                               Category = license.Categories,
+                               driver.Photo
+                           }).FirstOrDefault();
+            var Address = License.Address.Split();
+            var AddressLife = License.AddressLife.Split();
+            return new LicenseViewModel
+            {
+                FirstName = License.FirstName,
+                LastNamePatr = License.LastNamePatr,
+                DateBirth = License.DateBirth.ToShortDateString(),
+                DateLicense = License.DateLicense.ToShortDateString(),
+                DateExpire = License.DateExpire.ToShortDateString(),
+                Address = Address[0].Substring(0,Address[0].Length - 1),
+                AddressLife = AddressLife[0].Substring(0, AddressLife[0].Length - 1),
+                Category = License.Category,
+                SeriesNumberLicense = License.SeriesNumberLicense,
+                Photo = License.Photo
+            };
         }
 
     }

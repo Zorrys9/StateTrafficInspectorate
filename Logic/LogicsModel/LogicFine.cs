@@ -41,5 +41,29 @@ namespace Logic.LogicsModel
             return dtFine;
         }
 
+        public static DataTable GetListFineCurrentDriver()
+        {
+            DataTable dtFine = new DataTable();
+            dtFine.Columns.Add("Водитель");
+            dtFine.Columns.Add("Дата рождения");
+            dtFine.Columns.Add("Сумма");
+            dtFine.Columns.Add("Описание");
+
+            var Query = from fine in DbContext.db.FIne
+                        join driver in DbContext.db.Drivers on fine.IdDriver equals driver.Id where driver.Id == SecurityContext.CurrentDriver
+                        select new
+                        {
+                            Driver = driver.FirstName + " " + driver.LastName + " " + driver.Patronymic,
+                            DateBrith = driver.DateBirth,
+                            fine.Sum,
+                            fine.Description
+                        };
+            foreach (var item in Query)
+            {
+                dtFine.Rows.Add(item.Driver, item.DateBrith, item.Sum, item.Description);
+            }
+            return dtFine;
+        }
+
     }
 }

@@ -180,5 +180,22 @@ namespace StateTrafficInspectorate.Inspector.Driver
             authorization.Show();
             this.Close();
         }
+        private void TransportList_Click(object sender, RoutedEventArgs e)
+        {
+            Transport.TransportCurrentDriver transportCurrent = new Transport.TransportCurrentDriver();
+            transportCurrent.Show();
+        }
+
+        private void FineList_Click(object sender, RoutedEventArgs e)
+        {
+            FineCurrentDriver fineCurrent = new FineCurrentDriver();
+            fineCurrent.Show();
+        }
+
+        private void License_Click(object sender, RoutedEventArgs e)
+        {
+            LicenseCurrentDriver license = new LicenseCurrentDriver();
+            license.Show();
+        }
     }
 }

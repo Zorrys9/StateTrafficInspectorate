@@ -78,7 +78,52 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
 
         }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (ListDriver.SelectedCells.Count() > 0)
+                {
 
+                    DriverLogic.CurrentDriver(TableDriver.Rows[ListDriver.SelectedIndex].ItemArray[2].ToString());
+
+                    MessageBoxResult message = MessageBox.Show("Вы уверены, что хотите удалить этого водителя?", "Подтверждение действий", MessageBoxButton.YesNo);
+                    if (message == MessageBoxResult.Yes)
+                    {
+                        DriverLogic.DeleteDriver();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        private void Change_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (ListDriver.SelectedCells.Count() > 0)
+                {
+                    DriverLogic.CurrentDriver(TableDriver.Rows[ListDriver.SelectedIndex].ItemArray[2].ToString());
+
+                    CurrentDriver currentDriver = new CurrentDriver();
+                    currentDriver.Show();
+                    this.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+        }
         private void NameDriver_TextChanged(object sender, TextChangedEventArgs e)
         {
            

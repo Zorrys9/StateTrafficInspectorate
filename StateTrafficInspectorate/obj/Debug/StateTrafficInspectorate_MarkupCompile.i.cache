@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Марина\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\
 StateTrafficInspectorate
 none
 false
 DEBUG;TRACE
-C:\Users\Марина\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\App.xaml
-23-1353852895
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\App.xaml
+26-1075531988
 
-27-1406912022
-1601412807758
-Inspector\AddLicense.xaml;Inspector\AddNewInspector.xaml;Inspector\AuthorizationInspector.xaml;Inspector\CurrentInspector.xaml;Inspector\Driver\AddDriverWindow.xaml;Inspector\Driver\AddInsurance.xaml;Inspector\Driver\ChangeDriver.xaml;Inspector\Driver\ChangeStatus.xaml;Inspector\Driver\CurrentDriver.xaml;Inspector\Driver\DriverList.xaml;Inspector\Driver\Fine.xaml;Inspector\Driver\NewFine.xaml;Inspector\InspectorList.xaml;Inspector\InspectorMainWindow.xaml;Inspector\Transport\AddTransport.xaml;Inspector\Transport\CurrentTransport.xaml;Inspector\Transport\TransportList.xaml;MainWindow.xaml;Resources\Resources.xaml;UnRegisteredUser\CheckDriver.xaml;UnRegisteredUser\CheckFine.xaml;UnRegisteredUser\CheckLicenseDriver.xaml;UnRegisteredUser\CheckTransport.xaml;
+302012239792
+160-2060795131
+Inspector\AddLicense.xaml;Inspector\AddNewInspector.xaml;Inspector\AuthorizationInspector.xaml;Inspector\CurrentInspector.xaml;Inspector\Driver\AddDriverWindow.xaml;Inspector\Driver\AddInsurance.xaml;Inspector\Driver\ChangeDriver.xaml;Inspector\Driver\ChangeStatus.xaml;Inspector\Driver\CurrentDriver.xaml;Inspector\Driver\DriverList.xaml;Inspector\Driver\Fine.xaml;Inspector\Driver\FineCurrentDriver.xaml;Inspector\Driver\LicenseCurrentDriver.xaml;Inspector\Driver\NewFine.xaml;Inspector\InspectorList.xaml;Inspector\InspectorMainWindow.xaml;Inspector\Transport\AddTransport.xaml;Inspector\Transport\CurrentTransport.xaml;Inspector\Transport\TransportCurrentDriver.xaml;Inspector\Transport\TransportList.xaml;MainWindow.xaml;Resources\Resources.xaml;UnRegisteredUser\CheckDriver.xaml;UnRegisteredUser\CheckFine.xaml;UnRegisteredUser\CheckLicenseDriver.xaml;UnRegisteredUser\CheckTransport.xaml;
 
 True
 

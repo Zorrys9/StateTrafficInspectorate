@@ -82,6 +82,7 @@
     <Compile Include="SecurityContext.cs" />
     <Compile Include="ViewModels\DriverViewModel.cs" />
     <Compile Include="ViewModels\InspectorViewModel.cs" />
+    <Compile Include="ViewModels\LicenseViewModel.cs" />
     <Compile Include="ViewModels\TransportViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

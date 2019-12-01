@@ -83,6 +83,7 @@ namespace Logic.LogicsModel
         {
             DbContext.db.Drivers.Remove(DbContext.db.Drivers.Where(dr => dr.Id == SecurityContext.CurrentDriver).FirstOrDefault());
             DbContext.db.SaveChanges();
+            SecurityContext.CurrentDriver = 0;
         }
 
 
@@ -137,7 +138,10 @@ namespace Logic.LogicsModel
             CurrentDriver.Photo = driver.Photo;
             DbContext.db.Drivers.Create();
             DbContext.db.SaveChanges();
+            SecurityContext.CurrentDriver = 0;
         }
+
+        
 
         static string CheckPhone(string phone)
         {

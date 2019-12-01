@@ -1,0 +1,35 @@
+﻿<Window x:Class="StateTrafficInspectorate.Inspector.Driver.LicenseCurrentDriver"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector.Driver"
+        mc:Ignorable="d"
+        Title="Водительское удостоверение" Height="496" Width="813" Style="{StaticResource StyleWindow}">
+    <Grid Loaded="Grid_Loaded">
+        <Canvas x:Name="LicenseImage" HorizontalAlignment="Left" Height="440" Margin="10,10,0,0" VerticalAlignment="Top" Width="631">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/StateTrafficInspectorate;component/License.png"/>
+            </Canvas.Background>
+            <Label x:Name="FirstName" FontWeight="Bold" Content="" Canvas.Left="226" FontSize="11" Height="30" Canvas.Top="110" RenderTransformOrigin="0.532,0.484"/>
+            <Label x:Name="LastNamePatr" Content="" FontWeight="Bold" Canvas.Left="226" FontSize="11" Height="30" Canvas.Top="145" RenderTransformOrigin="0.532,0.484"/>
+            <Label x:Name="DateBirth" Content="" Canvas.Left="226" FontWeight="Bold" FontSize="11" Height="30" Canvas.Top="182" RenderTransformOrigin="0.532,0.484"/>
+            <Label x:Name="AddressLife" Content="" Canvas.Left="226" FontSize="11" FontWeight="Bold" Height="30" Canvas.Top="200" RenderTransformOrigin="0.532,0.484"/>
+            <Label x:Name="DateLicense" Content="" Canvas.Left="226" FontSize="11" Height="30" FontWeight="Bold" Canvas.Top="237" RenderTransformOrigin="0.532,0.484"/>
+            <Label x:Name="gibdd" Content="ГИБДД 7717" Canvas.Left="226" FontSize="11" Height="30" Canvas.Top="255" FontWeight="Bold" RenderTransformOrigin="0.532,0.484"/>
+            <Label x:Name="DateExpire" Content="" Canvas.Left="405" FontSize="11" Canvas.Top="237" Height="30" FontWeight="Bold" RenderTransformOrigin="0.532,0.484"/>
+            <Label x:Name="LicenseSeriesNumber" Content="" Canvas.Left="226" FontSize="11" Canvas.Top="293" Height="30" FontWeight="Bold" RenderTransformOrigin="0.532,0.484"/>
+            <Label x:Name="Address" Content="" Canvas.Left="226" FontSize="11" Canvas.Top="310" Height="30" FontWeight="Bold" RenderTransformOrigin="0.532,0.484"/>
+            <Label x:Name="Category" Content="Q" Canvas.Left="226" FontSize="11" Canvas.Top="345" Height="30" FontWeight="Bold" RenderTransformOrigin="0.532,0.484"/>
+            <Image x:Name="DriverImage" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="132" Canvas.Left="60" Canvas.Top="124"/>
+            <Label x:Name="FirstNameTranslyte" Content="" Canvas.Left="226" FontSize="11" Canvas.Top="129" Height="30" RenderTransformOrigin="0.532,0.484"/>
+            <Label x:Name="LastNamePatrTranslyte" Content="" Canvas.Left="226" FontSize="11" Canvas.Top="160" Height="30" RenderTransformOrigin="0.532,0.484"/>
+            <Label x:Name="AddressLifeTranslyte" Content="" Canvas.Left="226" FontSize="11" Canvas.Top="212" Height="30" RenderTransformOrigin="0.532,0.484"/>
+            <Label x:Name="gibddTranslyte" Content="GIBDD 7717" Canvas.Left="226" FontSize="12" Canvas.Top="271" Height="30" RenderTransformOrigin="0.532,0.484"/>
+            <Label x:Name="AddressTranslyte" Content="" Canvas.Left="226" FontSize="11" Canvas.Top="323" RenderTransformOrigin="0.532,0.484"/>
+        </Canvas>
+        <Button x:Name="Save" Content="Сохранить" HorizontalAlignment="Left" Margin="670,405,0,0" VerticalAlignment="Top" Width="110" Height="45" Click="Save_Click"/>
+
+
+    </Grid>
+</Window>

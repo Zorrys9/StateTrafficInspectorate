@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector.Driver"
         mc:Ignorable="d"
-        Title="Карточка водителя" Height="551.95" Width="664" Loaded="Window_Loaded" Style="{StaticResource StyleWindow}" Closed="Window_Closed">
+        Title="Карточка водителя" Height="551.95" Width="688" Loaded="Window_Loaded" Style="{StaticResource StyleWindow}" Closed="Window_Closed">
     <Grid>
         <Border BorderBrush="Black" x:Name="borderImage" BorderThickness="1" HorizontalAlignment="Left" Height="240" Margin="5,37,0,0" VerticalAlignment="Top" Width="180">
             <Image x:Name="ImageDriver" HorizontalAlignment="Left" Height="240" VerticalAlignment="Top" Width="180" Margin="-0.8,-0.8,-1.8,-1" />
@@ -40,8 +40,9 @@
                 <MenuItem Header="Изменить" Click="ChangeDriver_Click" ></MenuItem>
                 <MenuItem Header="Удалить" Click="Delete_Click"></MenuItem>
             </MenuItem>
-            <MenuItem Header="Список его автомобилей"/>
-            <MenuItem Header="Штрафы"/>
+            <MenuItem x:Name="TransportList" Header="Автомобили" Click="TransportList_Click"/>
+            <MenuItem Header="Штрафы" Click="FineList_Click" />
+            <MenuItem Header="Сформировать ВУ" Click="License_Click" />
             <MenuItem Header="Назад" Click="Back_Click"></MenuItem>
             <MenuItem Header="Выход из аккаунта" Click="ExitAccount_Click" HorizontalAlignment="Right" />
         </Menu>
