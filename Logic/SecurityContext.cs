@@ -12,5 +12,6 @@ namespace Logic
         public static int CurrentDriver;
         public static int CurrentInspector;
         public static int CurrentTransport;
+        public static Enums.EnumWindow CurrentWindow;
     }
 }

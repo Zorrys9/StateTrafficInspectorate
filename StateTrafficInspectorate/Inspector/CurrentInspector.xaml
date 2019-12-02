@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector"
         mc:Ignorable="d"
-        Title="CurrentInspector" Height="337" Width="789" Style="{StaticResource StyleWindow}">
+        Title="CurrentInspector" Height="266.264" Width="729.802" Style="{StaticResource StyleWindow}">
     <Grid Loaded="Grid_Loaded">
         <Label Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Фамилия" HorizontalAlignment="Left" Margin="8,10,0,0" VerticalAlignment="Top"/>
@@ -14,19 +14,19 @@
         <Label Content="Логин" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top"/>
         <Label Content="Пароль" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top"/>
         <Label Content="Должность" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="FirstName" HorizontalAlignment="Left" Height="23" Margin="105,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245"/>
-        <TextBox x:Name="LastName" HorizontalAlignment="Left" Height="23" Margin="105,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245"/>
-        <TextBox x:Name="Patronymic" HorizontalAlignment="Left" Height="23" Margin="105,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245"/>
-        <TextBox x:Name="Login" HorizontalAlignment="Left" Height="23" Margin="105,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245"/>
-        <TextBox x:Name="Password" HorizontalAlignment="Left" Height="23" Margin="105,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245"/>
+        <TextBox x:Name="FirstName" MaxLength="50" HorizontalAlignment="Left" Height="23" Margin="105,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245"/>
+        <TextBox x:Name="LastName" MaxLength="50" HorizontalAlignment="Left" Height="23" Margin="105,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245"/>
+        <TextBox x:Name="Patronymic" MaxLength="50" HorizontalAlignment="Left" Height="23" Margin="105,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245"/>
+        <TextBox x:Name="Login" MaxLength="50" HorizontalAlignment="Left" Height="23" Margin="105,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245"/>
+        <TextBox x:Name="Password" MaxLength="50" HorizontalAlignment="Left" Height="23" Margin="105,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245"/>
         <ComboBox x:Name="Position" HorizontalAlignment="Left" SelectedIndex="0" Margin="120,190,0,0" VerticalAlignment="Top" Width="230"/>
-        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Margin="649,237,0,0" VerticalAlignment="Top" Width="123" Height="60" Click="Back_Click"/>
+        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Margin="589,125,0,0" VerticalAlignment="Top" Width="123" Height="60" Click="Back_Click"/>
         <Label Content="Паспортные данные" HorizontalAlignment="Left" Margin="390,46,0,0" VerticalAlignment="Top"/>
         <Label Content="Дата рождения" HorizontalAlignment="Left" Margin="390,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Серия" HorizontalAlignment="Left" Margin="390,86,0,0" VerticalAlignment="Top"/>
-        <Label Content="Номер" HorizontalAlignment="Left" Margin="390,127,0,0" VerticalAlignment="Top"/>
+        <Label Content="Номер" HorizontalAlignment="Left" Margin="553,86,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="PasportSeries" MaxLength="4" HorizontalAlignment="Left" Height="23" Margin="450,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
-        <TextBox x:Name="PasportNumber" MaxLength="6" HorizontalAlignment="Left" Height="23" Margin="450,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="PasportNumber" MaxLength="6" HorizontalAlignment="Left" Height="23" Margin="612,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
         <DatePicker x:Name="DateBirth" HorizontalAlignment="Left" Margin="518,11,0,0" VerticalAlignment="Top" Width="142"/>
 
     </Grid>

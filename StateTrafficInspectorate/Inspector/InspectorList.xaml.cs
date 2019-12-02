@@ -42,19 +42,40 @@ namespace StateTrafficInspectorate.Inspector
 
         private void InspectorList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (ListInspector.SelectedCells.Count > 0)
+            try
             {
-                LogicInspector.CurrentInspector(dtInspector.Rows[ListInspector.SelectedIndex].ItemArray[1].ToString());
 
-                CurrentInspector inspector = new CurrentInspector();
-                inspector.Show();
-                this.Close();
+                if (ListInspector.SelectedCells.Count > 0)
+                {
+                    LogicInspector.CurrentInspector(dtInspector.Rows[ListInspector.SelectedIndex].ItemArray[1].ToString());
+
+                    CurrentInspector inspector = new CurrentInspector();
+                    inspector.Show();
+                    this.Close();
+                }
+
             }
-            
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }    
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
+            ListInspector.ItemsSource = dtInspector.DefaultView;
+
+            ListInspector.Columns[0].Width = 220;
+            ListInspector.Columns[1].Width = 95;
+            ListInspector.Columns[2].Width = 95;
+            ListInspector.Columns[3].Width = 100;
+            ListInspector.Columns[4].Width = 100;
+
+        }
+
+        private void NameInspector_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dtInspector = LogicInspector.GetFilterListInspector(NameInspector.Text);
             ListInspector.ItemsSource = dtInspector.DefaultView;
         }
     }

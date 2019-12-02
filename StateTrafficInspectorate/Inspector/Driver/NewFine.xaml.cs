@@ -35,35 +35,54 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            FineModel fine = new FineModel()
+            try
             {
-                IdDriver = LogicLicense.GetIdDriver(Driver.Text),
-                Sum = double.Parse(Sum.Text),
-                Description = Description.Text
-            };
-            LogicFine.SaveFine(fine);
-            MessageBox.Show("Новый штраф успешно создан");
 
-            Fine fineList = new Fine();
-            fineList.Show();
-            this.Close();
+                FineModel fine = new FineModel()
+                {
+                    IdDriver = LogicLicense.GetIdDriver(Driver.Text),
+                    Sum = double.Parse(Sum.Text),
+                    Description = Description.Text
+                };
+                LogicFine.SaveFine(fine);
+                MessageBox.Show("Новый штраф успешно создан");
+
+                Fine fineList = new Fine();
+                fineList.Show();
+                this.Close();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void Driver_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (Driver.Text.Length == 10)
+            try
             {
-                if (LogicLicense.GetId(Driver.Text) == 0)
+
+                if (Driver.Text.Length == 10)
                 {
-                    Add.IsEnabled = false;
-                    MessageBoxResult message = MessageBox.Show("Водитель с такими данными не найден, желаете его добавить?", "Водитель не найден", MessageBoxButton.YesNo);
-                    if (message == MessageBoxResult.Yes)
+                    if (LogicLicense.GetId(Driver.Text) == 0)
                     {
-                        Driver.AddDriverWindow addDriver = new Driver.AddDriverWindow();
-                        addDriver.Show();
+                        Add.IsEnabled = false;
+                        MessageBoxResult message = MessageBox.Show("Водитель с такими данными не найден, желаете его добавить?", "Водитель не найден", MessageBoxButton.YesNo);
+                        if (message == MessageBoxResult.Yes)
+                        {
+                            Driver.AddDriverWindow addDriver = new Driver.AddDriverWindow();
+                            addDriver.Show();
+                        }
                     }
+                    else Add.IsEnabled = true;
                 }
-                else Add.IsEnabled = true;
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

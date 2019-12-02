@@ -78,50 +78,78 @@ namespace StateTrafficInspectorate.Inspector.Transport
 
         private void Change_Click(object sender, RoutedEventArgs e)
         {
-            TransportModel transport = new TransportModel()
+            try
             {
-                Manufacturer = Manufacturer.Text,
-                Model = Model.Text,
-                CategoryTransport = LogicCategoryTransport.GetIdByName(CategoryTransport.Text),
-                YearTransport = YearTransport.Text,
-                NumberEngine = NumberEngine.Text,
-                ModelEngine = ModelEngine.Text,
-                YearEngine = YearEngine.Text,
-                PowerEngineKVT = PowerEngineK.Text,
-                PowerEngineH = PowerEngineH.Text,
-                MaxLoad = double.Parse(MaxLoad.Text),
-                Color = Color.Text,
-                Weight = double.Parse(Weight.Text),
-                VIN = VIN.Text,
-                TypeOfDrive = LogicTypeOfDrive.GetIdByName(TypeOfDrive.Text),
-                Description = Description.Text
-            };
 
-            LogicTransport.ChangeTransport(transport);
-            MessageBox.Show("Транспорт успешно изменен");
+                TransportModel transport = new TransportModel()
+                {
+                    Manufacturer = Manufacturer.Text,
+                    Model = Model.Text,
+                    CategoryTransport = LogicCategoryTransport.GetIdByName(CategoryTransport.Text),
+                    YearTransport = YearTransport.Text,
+                    NumberEngine = NumberEngine.Text,
+                    ModelEngine = ModelEngine.Text,
+                    YearEngine = YearEngine.Text,
+                    PowerEngineKVT = PowerEngineK.Text,
+                    PowerEngineH = PowerEngineH.Text,
+                    MaxLoad = double.Parse(MaxLoad.Text),
+                    Color = Color.Text,
+                    Weight = double.Parse(Weight.Text),
+                    VIN = VIN.Text,
+                    TypeOfDrive = LogicTypeOfDrive.GetIdByName(TypeOfDrive.Text),
+                    Description = Description.Text
+                };
 
-            TransportList transportList = new TransportList();
-            transportList.Show();
-            this.Close();
+                LogicTransport.ChangeTransport(transport);
+                MessageBox.Show("Транспорт успешно изменен");
+
+                TransportList transportList = new TransportList();
+                transportList.Show();
+                this.Close();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            LogicTransport.DeleteTransport();
-            MessageBox.Show("Автомобиль успешно удален");
+            try
+            {
 
-            TransportList transportList = new TransportList();
-            transportList.Show();
-            this.Close();
+                LogicTransport.DeleteTransport();
+                MessageBox.Show("Автомобиль успешно удален");
+
+                TransportList transportList = new TransportList();
+                transportList.Show();
+                this.Close();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ExitAccount_Click(object sender, RoutedEventArgs e)
         {
-            SecurityContext.CurrentTransport = 0;
-            SecurityContext.IdUser = 0;
-            AuthorizationInspector authorization = new AuthorizationInspector();
-            authorization.Show();
-            this.Close();
+            try
+            {
+
+                SecurityContext.CurrentTransport = 0;
+                SecurityContext.IdUser = 0;
+                AuthorizationInspector authorization = new AuthorizationInspector();
+                authorization.Show();
+                this.Close();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

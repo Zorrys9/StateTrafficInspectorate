@@ -13,10 +13,58 @@ namespace Logic.LogicsModel
 
         public static void SaveTransport(TransportModel newTransport)
         {
-            DbContext.db.Transport.Add(newTransport);
-            DbContext.db.SaveChanges();
+            if (OtherLogic.LogicVIN.CheckVIN(newTransport.VIN))
+            {
+                if (CheckVIN(newTransport.VIN))
+                {
+                    DbContext.db.Transport.Add(newTransport);
+                    DbContext.db.SaveChanges();
+                }
+                else throw new Exception("Транспорт с таким VIN кодом уже зарегистрирован!");
+            }
+            else throw new Exception("VIN код введен не верно!");
         }
 
+        public static DataTable GetFilterListTransport(string name)
+        {
+            DataTable dtTransport = new DataTable();
+            dtTransport.Columns.Add("ФИО водителя");
+            dtTransport.Columns.Add("Марка");
+            dtTransport.Columns.Add("Привод");
+            dtTransport.Columns.Add("Год производства");
+            dtTransport.Columns.Add("VIN");
+            dtTransport.Columns.Add("Цвет");
+            string LastName = "";
+            string Patronymic = "";
+            string[] NameArray = name.Split(' ');
+            if (NameArray.Length <= 3)
+            {
+                string FirstName = NameArray[0];
+                if (NameArray.Length > 1) LastName = NameArray[1];
+                if (NameArray.Length > 2) Patronymic = NameArray[2];
+
+                var Query = from transport in DbContext.db.Transport
+                            join driver in DbContext.db.Drivers on transport.IdDriver equals driver.Id
+                            join type in DbContext.db.TypeOfDrive on transport.TypeOfDrive equals type.Id
+                            where (driver.FirstName.Contains(FirstName) || driver.LastName.Contains(FirstName) || driver.Patronymic.Contains(FirstName))
+                            && (driver.FirstName.Contains(LastName) || driver.LastName.Contains(LastName) || driver.Patronymic.Contains(LastName))
+                            && (driver.FirstName.Contains(Patronymic) || driver.LastName.Contains(Patronymic) || driver.Patronymic.Contains(Patronymic))
+                            select new
+                            {
+                                NameDriver = driver.FirstName + " " + driver.LastName + " " + driver.Patronymic,
+                                transport.Manufacturer,
+                                transport.VIN,
+                                transport.YearTransport,
+                                TypeOfDrive = type.Name,
+                                transport.Color
+                            };
+                foreach (var transport in Query)
+                {
+                    dtTransport.Rows.Add(transport.NameDriver, transport.Manufacturer, transport.TypeOfDrive, transport.YearTransport, transport.VIN, transport.Color);
+                }
+            }
+            return dtTransport;
+        }
         public static void ChangeDriver(string passport)
         {
             var IdNextDriver = DbContext.db.Drivers.Where(dr => dr.SerialPasp == passport.Substring(0, 4) && dr.NumberPasp == passport.Substring(4, 6)).FirstOrDefault().Id;
@@ -43,6 +91,7 @@ namespace Logic.LogicsModel
             dtTransport.Columns.Add("Привод");
             dtTransport.Columns.Add("Год производства");
             dtTransport.Columns.Add("VIN");
+            dtTransport.Columns.Add("Цвет");
 
             var Query = from transport in DbContext.db.Transport
                         join driver in DbContext.db.Drivers on transport.IdDriver equals driver.Id
@@ -53,11 +102,12 @@ namespace Logic.LogicsModel
                             transport.Manufacturer,
                             transport.VIN,
                             transport.YearTransport,
-                            TypeOfDrive = type.Name
+                            TypeOfDrive = type.Name,
+                            transport.Color
                         };
             foreach(var transport in Query)
             {
-                dtTransport.Rows.Add(transport.NameDriver, transport.Manufacturer, transport.TypeOfDrive, transport.YearTransport, transport.VIN);
+                dtTransport.Rows.Add(transport.NameDriver, transport.Manufacturer, transport.TypeOfDrive, transport.YearTransport, transport.VIN,transport.Color);
             }
             return dtTransport;
         }
@@ -107,6 +157,13 @@ namespace Logic.LogicsModel
         {
             DbContext.db.Transport.Remove(DbContext.db.Transport.Find(SecurityContext.CurrentTransport));
             DbContext.db.SaveChanges();
+        }
+
+        static bool CheckVIN(string VIN)
+        {
+            if (DbContext.db.Transport.Where(tr => tr.VIN == VIN).Count() > 0)
+                return false;
+            else return true;
         }
         public static void ChangeTransport(TransportModel transport)
         {

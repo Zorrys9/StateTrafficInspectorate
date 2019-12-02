@@ -44,6 +44,17 @@ namespace StateTrafficInspectorate.Inspector.Driver
         {
             dtFine = LogicFine.GetListFine();
             FineList.ItemsSource = dtFine.DefaultView;
+
+            FineList.Columns[0].Width = 200;
+            FineList.Columns[1].Width = 100;
+            FineList.Columns[2].Width = 90;
+            FineList.Columns[3].Width = 130;
+        }
+
+        private void NameDriver_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dtFine = LogicFine.GetFilterListFine(NameDriver.Text);
+            FineList.ItemsSource = dtFine.DefaultView;
         }
     }
 }

@@ -71,21 +71,30 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
         private void License_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(License.Text.Length == 10)
+            try
             {
-                if (LogicLicense.CheckLicense(License.Text))
-                    Change.IsEnabled = true;
-                else
+
+                if (License.Text.Length == 10)
                 {
-                    Change.IsEnabled = false;
-                    MessageBoxResult message = MessageBox.Show("Данного водительского удостоверения не найдено, желаете создать его?", "Водительское удостоверение не найдено", MessageBoxButton.YesNo);
-                    if (message == MessageBoxResult.Yes)
+                    if (LogicLicense.CheckLicense(License.Text))
+                        Change.IsEnabled = true;
+                    else
                     {
-                        Inspector.AddLicense license = new AddLicense();
-                        license.Show();
-                        this.Close();
+                        Change.IsEnabled = false;
+                        MessageBoxResult message = MessageBox.Show("Данного водительского удостоверения не найдено, желаете создать его?", "Водительское удостоверение не найдено", MessageBoxButton.YesNo);
+                        if (message == MessageBoxResult.Yes)
+                        {
+                            Inspector.AddLicense license = new AddLicense();
+                            license.Show();
+                            this.Close();
+                        }
                     }
                 }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

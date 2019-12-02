@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector.Driver"
         mc:Ignorable="d"
-        Title="Список штрафов" Style="{StaticResource StyleWindow}" Height="387" Width="744">
+        Title="Список штрафов" Style="{StaticResource StyleWindow}" Height="298.2" Width="557.6">
     <Grid>
-        <DataGrid x:Name="FineList" HorizontalAlignment="Left" Height="210" Margin="10,10,0,0" VerticalAlignment="Top" Width="700" Loaded="FineList_Loaded"/>
-        <Button Content="Назад" FontSize="16" x:Name="Back" HorizontalAlignment="Left" Margin="599,235,0,0" VerticalAlignment="Top" Width="111" Height="50" Click="Back_Click"/>
-        <Button Content="Назначить штраф" FontSize="16" x:Name="NewDriver" HorizontalAlignment="Left" Margin="424,235,0,0" VerticalAlignment="Top" Width="151" Height="50" Click="NewFine_Click" RenderTransformOrigin="-0.444,-1.6"/>
-        <Label Content="ФИО нарушителя" HorizontalAlignment="Left" Margin="105,295,0,0" VerticalAlignment="Top" Height="35" Width="156"/>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="266,295,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="444"/>
+        <DataGrid x:Name="FineList" HorizontalAlignment="Left" Height="160" Margin="10,10,0,0" VerticalAlignment="Top" Width="530" Loaded="FineList_Loaded"/>
+        <Button Content="Назад" FontSize="16" x:Name="Back" HorizontalAlignment="Left" Margin="429,175,0,0" VerticalAlignment="Top" Width="111" Height="50" Click="Back_Click"/>
+        <Button Content="Назначить штраф" FontSize="16" x:Name="NewDriver" HorizontalAlignment="Left" Margin="273,175,0,0" VerticalAlignment="Top" Width="151" Height="50" Click="NewFine_Click" RenderTransformOrigin="-0.444,-1.6"/>
+        <Label Content="ФИО нарушителя" HorizontalAlignment="Left" Margin="6,226,0,0" VerticalAlignment="Top" Height="35" Width="156"/>
+        <TextBox x:Name="NameDriver" HorizontalAlignment="Left" Height="25" Margin="167,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="373" TextChanged="NameDriver_TextChanged"/>
 
     </Grid>
 </Window>

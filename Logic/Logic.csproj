@@ -51,7 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContext.cs" />
+    <Compile Include="Enums\EnumWindow.cs" />
     <Compile Include="LogicsModel\DriverLogic.cs" />
+    <Compile Include="LogicsModel\LogicCategoryLicense.cs" />
     <Compile Include="LogicsModel\LogicCategoryTransport.cs" />
     <Compile Include="LogicsModel\LogicFine.cs" />
     <Compile Include="LogicsModel\LogicInspector.cs" />
@@ -63,6 +65,7 @@
     <Compile Include="LogicsModel\LogicTypeInsurances.cs" />
     <Compile Include="LogicsModel\LogicTypeOfDrive.cs" />
     <Compile Include="LogicsModel\LogicUser.cs" />
+    <Compile Include="Models\CategoryLicenseModel.cs" />
     <Compile Include="Models\FineModel.cs" />
     <Compile Include="Models\InsurancesModel.cs" />
     <Compile Include="Models\CategoryTransportModel.cs" />
@@ -77,6 +80,8 @@
     <Compile Include="Models\TypeOfDrive.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="OtherLogic\ImageLogic.cs" />
+    <Compile Include="OtherLogic\LogicVIN.cs" />
+    <Compile Include="OtherLogic\LogicWindow.cs" />
     <Compile Include="OtherLogic\StringType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecurityContext.cs" />

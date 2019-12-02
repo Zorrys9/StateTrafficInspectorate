@@ -51,6 +51,7 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
         private void NewDriver_Click(object sender, RoutedEventArgs e)
         {
+            Logic.OtherLogic.LogicWindow.FromDriverList();
             AddDriverWindow addDriver = new AddDriverWindow();
             addDriver.Show();
             this.Close();
@@ -63,7 +64,6 @@ namespace StateTrafficInspectorate.Inspector.Driver
                 if (ListDriver.SelectedCells.Count() > 0)
                 {
                     DriverLogic.CurrentDriver(TableDriver.Rows[ListDriver.SelectedIndex].ItemArray[2].ToString());
-
                     CurrentDriver currentDriver = new CurrentDriver();
                     currentDriver.Show();
                     this.Close();
@@ -126,7 +126,6 @@ namespace StateTrafficInspectorate.Inspector.Driver
         }
         private void NameDriver_TextChanged(object sender, TextChangedEventArgs e)
         {
-           
             TableDriver = DriverLogic.GetFilterListDrivers(NameDriver.Text);
             ListDriver.ItemsSource = TableDriver.DefaultView;
         }

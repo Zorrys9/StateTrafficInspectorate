@@ -14,6 +14,16 @@ namespace Logic.LogicsModel
         public static void SaveLicense(LicenseModel license)
         {
             license.IdInspector = SecurityContext.IdUser;
+            license.Status = 1;
+
+            var ListLicense = DbContext.db.License.Where(lic => lic.IdDriver == license.IdDriver);
+            foreach(var License in ListLicense)
+            {
+                if (license.LicenseDate > License.LicenseDate && license.LicenseDate < License.ExpireDate)
+                    throw new Exception("На данную дату уже зарегистрировано ВУ!");
+            }
+            if (license.LicenseDate > license.ExpireDate)
+                throw new Exception("Дата регистрации должна быть меньше, чем дата истечения срока");
             DbContext.db.License.Add(license);
             DbContext.db.SaveChanges();
         }
@@ -54,7 +64,9 @@ namespace Logic.LogicsModel
         {
             var License = (from license in DbContext.db.License
                            join driver in DbContext.db.Drivers on license.IdDriver equals driver.Id
+                           join category in DbContext.db.CategoryLicense on license.Id equals category.IdLicense
                            where driver.Id == SecurityContext.CurrentDriver
+                           && (DateTime.Today > license.LicenseDate && DateTime.Today < license.ExpireDate)
                            select new
                            {
                                driver.FirstName,
@@ -65,11 +77,40 @@ namespace Logic.LogicsModel
                                DateExpire = license.ExpireDate,
                                SeriesNumberLicense = license.LicenseSeries.Substring(0, 2) + " " + license.LicenseSeries.Substring(2, 2) + " " + license.LicenseNumber,
                                Address = driver.FullAddress,
-                               Category = license.Categories,
-                               driver.Photo
+                               driver.Photo,
+                               category.M, category.Tb, category.Tm, category.DE, category.D1E, category.D1, category.D,category.CE, category.C1E, category.C1,
+                               category.C, category.BE, category.B1, category.B, category.A1, category.A
                            }).FirstOrDefault();
             var Address = License.Address.Split();
             var AddressLife = License.AddressLife.Split();
+            List<string> ListCategory = new List<string>();
+            if (License.A) ListCategory.Add("A");
+            if (License.A) ListCategory.Add("Tb");
+            if (License.A) ListCategory.Add("Tm");
+            if (License.A) ListCategory.Add("DE");
+            if (License.A) ListCategory.Add("D1E");
+            if (License.A) ListCategory.Add("D1");
+            if (License.A) ListCategory.Add("D");
+            if (License.A) ListCategory.Add("CE");
+            if (License.A) ListCategory.Add("C1E");
+            if (License.A) ListCategory.Add("C1");
+            if (License.A) ListCategory.Add("C");
+            if (License.A) ListCategory.Add("BE");
+            if (License.A) ListCategory.Add("B1");
+            if (License.A) ListCategory.Add("B");
+            if (License.A) ListCategory.Add("A1");
+            if (License.A) ListCategory.Add("M");
+
+            string Category = "";
+
+            for(int i = 0; i < ListCategory.Count; i++)
+            {
+                if (i < ListCategory.Count() - 1)
+                    Category += ListCategory[i] + ", ";
+                else
+                    Category += ListCategory[i];
+            }
+
             return new LicenseViewModel
             {
                 FirstName = License.FirstName,
@@ -79,7 +120,7 @@ namespace Logic.LogicsModel
                 DateExpire = License.DateExpire.ToShortDateString(),
                 Address = Address[0].Substring(0,Address[0].Length - 1),
                 AddressLife = AddressLife[0].Substring(0, AddressLife[0].Length - 1),
-                Category = License.Category,
+                Category = Category,
                 SeriesNumberLicense = License.SeriesNumberLicense,
                 Photo = License.Photo
             };

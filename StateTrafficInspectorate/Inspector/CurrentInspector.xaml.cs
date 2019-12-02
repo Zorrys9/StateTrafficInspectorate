@@ -35,18 +35,28 @@ namespace StateTrafficInspectorate.Inspector
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            InspectorModel inspector = LogicInspector.GetInfoCurrentInspector();
+            try
+            {
 
-            FirstName.Text = inspector.FirstName;
-            LastName.Text = inspector.LastName;
-            Patronymic.Text = inspector.Patronymic;
-            Login.Text = inspector.Login;
-            Password.Text = inspector.Password;
-            DateBirth.SelectedDate = inspector.DateBirth;
-            PasportSeries.Text = inspector.PasportSeries;
-            PasportNumber.Text = inspector.PasportNumber;
-            Position.ItemsSource = LogicPosition.GetNameList();
-            Position.SelectedIndex = (int)inspector.Position-1;
+                InspectorModel inspector = LogicInspector.GetInfoCurrentInspector();
+
+                FirstName.Text = inspector.FirstName;
+                LastName.Text = inspector.LastName;
+                Patronymic.Text = inspector.Patronymic;
+                Login.Text = inspector.Login;
+                Password.Text = inspector.Password;
+                DateBirth.SelectedDate = inspector.DateBirth;
+                PasportSeries.Text = inspector.PasportSeries;
+                PasportNumber.Text = inspector.PasportNumber;
+                Position.ItemsSource = LogicPosition.GetNameList();
+                Position.SelectedIndex = (int)inspector.Position - 1;
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

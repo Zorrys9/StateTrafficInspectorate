@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector.Driver"
         mc:Ignorable="d"
-        Title="Список водителей" Height="497" Width="804" Style="{StaticResource StyleWindow}">
+        Title="Список водителей" Height="308.2" Width="970" Style="{StaticResource StyleWindow}">
     <Grid>
-        <DataGrid x:Name="ListDriver" HorizontalAlignment="Left" Height="345" Margin="10,10,0,0" VerticalAlignment="Top" Width="774" Loaded="DataGrid_Loaded" MouseDoubleClick="ListDriver_MouseDoubleClick">
+        <DataGrid x:Name="ListDriver" HorizontalAlignment="Left" Height="201" Margin="10,10,0,0" VerticalAlignment="Top" Width="943" Loaded="DataGrid_Loaded" MouseDoubleClick="ListDriver_MouseDoubleClick">
             <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Добавить" Click="NewDriver_Click"></MenuItem>
@@ -16,10 +16,10 @@
                 </ContextMenu>
             </DataGrid.ContextMenu>
         </DataGrid>
-        <Button Content="Назад" FontSize="16" x:Name="Back" HorizontalAlignment="Left" Margin="673,360,0,0" VerticalAlignment="Top" Width="111" Height="50" Click="Back_Click"/>
-        <Button Content="Новый водитель" FontSize="16" x:Name="NewDriver" HorizontalAlignment="Left" Margin="517,360,0,0" VerticalAlignment="Top" Width="151" Height="50" Click="NewDriver_Click"/>
-        <Label Content="ФИО водителя" HorizontalAlignment="Left" Margin="200,415,0,0" VerticalAlignment="Top" Height="35" Width="120"/>
-        <TextBox x:Name="NameDriver" HorizontalAlignment="Left" Height="25" Margin="340,415,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="444" TextChanged="NameDriver_TextChanged"/>
+        <Button Content="Назад" FontSize="16" x:Name="Back" HorizontalAlignment="Left" Margin="842,218,0,0" VerticalAlignment="Top" Width="111" Height="50" Click="Back_Click"/>
+        <Button Content="Новый водитель" FontSize="16" x:Name="NewDriver" HorizontalAlignment="Left" Margin="686,218,0,0" VerticalAlignment="Top" Width="151" Height="50" Click="NewDriver_Click"/>
+        <Label Content="ФИО водителя" HorizontalAlignment="Left" Margin="10,216,0,0" VerticalAlignment="Top" Height="35" Width="118"/>
+        <TextBox x:Name="NameDriver" HorizontalAlignment="Left" Height="25" Margin="184,218,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="476" TextChanged="NameDriver_TextChanged"/>
 
 
     </Grid>

@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContext.cs" />
+    <Compile Include="EntityModels\CategoryLicenseEntityModels.cs" />
     <Compile Include="EntityModels\CategoryTransportEntityModels.cs" />
     <Compile Include="EntityModels\DriversEntityModels.cs" />
     <Compile Include="EntityModels\FIneEntityModels.cs" />

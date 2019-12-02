@@ -22,9 +22,6 @@ namespace Logic.Models
         [Column(TypeName = "date")]
         public DateTime ExpireDate { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string Categories { get; set; }
 
         [Required]
         [StringLength(5)]
@@ -42,7 +39,6 @@ namespace Logic.Models
         {
             return new LicenseEntityModels
             {
-                Categories = license.Categories,
                 IdDriver = license.IdDriver,
                 ExpireDate = license.ExpireDate,
                 LicenseDate = license.LicenseDate,
@@ -58,7 +54,6 @@ namespace Logic.Models
         {
             return new LicenseModel
             {
-                Categories = license.Categories,
                 IdDriver = license.IdDriver,
                 ExpireDate = license.ExpireDate,
                 LicenseDate = license.LicenseDate,

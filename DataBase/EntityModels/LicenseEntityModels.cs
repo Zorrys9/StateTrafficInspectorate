@@ -28,13 +28,8 @@ namespace DataBase.EntityModels
         public DateTime ExpireDate { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string Categories { get; set; }
-
-        [Required]
-        [StringLength(5)]
+        [StringLength(4)]
         public string LicenseSeries { get; set; }
-
         [Required]
         [StringLength(8)]
         public string LicenseNumber { get; set; }

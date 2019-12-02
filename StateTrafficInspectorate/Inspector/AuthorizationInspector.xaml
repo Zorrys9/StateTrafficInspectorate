@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector"
         mc:Ignorable="d"
-        Title="Авторизация" Height="196.9" Width="378.8" Style="{StaticResource StyleWindow}">
+        Title="Авторизация" Height="160.633" Width="364.933" Style="{StaticResource StyleWindow}">
     <Grid>
-        <Button Content="Вход" FontSize="18" HorizontalAlignment="Left" Margin="210,85,0,0" TabIndex="3" VerticalAlignment="Top" Width="137" Height="55" Click="Authorization_Click"/>
+        <Button Content="Вход" FontSize="18" HorizontalAlignment="Left" Margin="217,77,0,0" TabIndex="3" VerticalAlignment="Top" Width="130" Height="42" Click="Authorization_Click"/>
         <Label Content="Логин" FontSize="16" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top"/>
         <Label Content="Пароль" FontSize="16" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>
         <TextBox FontSize="18" MaxLength="50" TabIndex="1" x:Name="Login" HorizontalAlignment="Left" Height="32" Margin="90,3,0,0" TextWrapping="Wrap" Text="ins" VerticalAlignment="Top" Width="257"/>
         <PasswordBox HorizontalAlignment="Left" FontSize="18" MaxLength="50" TabIndex="2" x:Name="Password" Password="ins" Margin="90,40,0,0" VerticalAlignment="Top" Width="257" Height="32"/>
-        <Button x:Name="Back" Content="Назад" FontSize="18" HorizontalAlignment="Left" Margin="10,85,0,0" TabIndex="3" VerticalAlignment="Top" Width="137" Height="55" Click="Back_Click"/>
+        <Button x:Name="Back" Content="Назад" FontSize="18" HorizontalAlignment="Left" Margin="10,77,0,0" TabIndex="3" VerticalAlignment="Top" Width="130" Height="42" Click="Back_Click"/>
 
     </Grid>
 </Window>

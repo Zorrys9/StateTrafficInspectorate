@@ -27,6 +27,8 @@ namespace DataBase
         public virtual DbSet<TypeOfDriveEntityModels> TypeOfDrive { get; set; }
         public virtual DbSet<TypeInsurancesEntityModels> TypeInsurances { get; set; }
         public virtual DbSet<FIneEntityModels> FIne { get; set; }
+        public virtual DbSet<CategoryLicenseEntityModels> CategoryLicense { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CategoryTransportEntityModels>()

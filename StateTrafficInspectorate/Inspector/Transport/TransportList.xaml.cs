@@ -34,6 +34,7 @@ namespace StateTrafficInspectorate.Inspector.Transport
 
         private void NewDriver_Click(object sender, RoutedEventArgs e)
         {
+            Logic.OtherLogic.LogicWindow.FromTransportList();
             AddTransport addTransport = new AddTransport();
             addTransport.Show();
             this.Close();
@@ -42,19 +43,41 @@ namespace StateTrafficInspectorate.Inspector.Transport
         {
             dtTransport = LogicTransport.GetTransportList();
             Transports.ItemsSource = dtTransport.DefaultView;
+
+            Transports.Columns[0].Width = 200;
+            Transports.Columns[1].Width = 100;
+            Transports.Columns[2].Width = 100;
+            Transports.Columns[3].Width = 100;
+            Transports.Columns[4].Width = 160;
+            Transports.Columns[5].Width = 100;
         }
 
         private void TransportList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if(Transports.SelectedCells.Count() > 0)
+            try
             {
 
-                LogicTransport.CurrentTransport(dtTransport.Rows[Transports.SelectedIndex].ItemArray[4].ToString());
+                if (Transports.SelectedCells.Count() > 0)
+                {
 
-                CurrentTransport currentTransport = new CurrentTransport();
-                currentTransport.Show();
-                this.Close();
+                    LogicTransport.CurrentTransport(dtTransport.Rows[Transports.SelectedIndex].ItemArray[4].ToString());
+
+                    CurrentTransport currentTransport = new CurrentTransport();
+                    currentTransport.Show();
+                    this.Close();
+                }
+
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void NameDriver_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dtTransport = LogicTransport.GetFilterListTransport(NameDriver.Text);
+            Transports.ItemsSource = dtTransport.DefaultView;
         }
     }
 }

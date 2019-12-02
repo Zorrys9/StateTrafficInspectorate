@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Logic.LogicsModel;
 using Logic.Models;
+using Logic.Enums;
 namespace StateTrafficInspectorate.Inspector.Transport
 {
     /// <summary>
@@ -27,10 +28,23 @@ namespace StateTrafficInspectorate.Inspector.Transport
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            TransportList transportList = new TransportList();
-            transportList.Show();
-            this.Close();
-
+            switch (Logic.SecurityContext.CurrentWindow)
+            {
+                case EnumWindow.AddInsurance:
+                    this.Close();
+                    break;
+                case EnumWindow.AddLicense:
+                    this.Close();
+                    break;
+                case EnumWindow.ChangeDriver:
+                    this.Close();
+                    break;
+                case EnumWindow.TransportList:
+                    TransportList TransportList = new TransportList();
+                    TransportList.Show();
+                    this.Close();
+                    break;
+            }
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
@@ -78,17 +92,28 @@ namespace StateTrafficInspectorate.Inspector.Transport
 
         private void Passport_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(Passport.Text.Length == 10 && DriverLogic.GetIdByPassport(Passport.Text) == 0)
+            try
             {
-                Add.IsEnabled = false;
-                MessageBoxResult message = MessageBox.Show("Водителя с такими паспортными данными не существует! Желаете добавить его?", "Водитель не найден", MessageBoxButton.YesNo);
-                if (message == MessageBoxResult.Yes)
+
+                if (Passport.Text.Length == 10 && DriverLogic.GetIdByPassport(Passport.Text) == 0)
                 {
-                    Driver.AddDriverWindow addDriver = new Driver.AddDriverWindow();
-                    addDriver.Show();
-                    this.Close();
+                    Add.IsEnabled = false;
+                    MessageBoxResult message = MessageBox.Show("Водителя с такими паспортными данными не существует! Желаете добавить его?", "Водитель не найден", MessageBoxButton.YesNo);
+                    if (message == MessageBoxResult.Yes)
+                    {
+                        Logic.OtherLogic.LogicWindow.FromAddTransport();
+                        Driver.AddDriverWindow addDriver = new Driver.AddDriverWindow();
+                        //addDriver.Show();
+                    }
                 }
-            }else Add.IsEnabled = true;
+                else Add.IsEnabled = true;
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

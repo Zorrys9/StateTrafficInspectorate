@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate"
         mc:Ignorable="d"
-        Title="Главная страница Госавтоинспекции" Height="236" Width="723" Style="{StaticResource StyleWindow}">
+        Title="Главная страница Госавтоинспекции" Height="236" Width="734.116" Style="{StaticResource StyleWindow}">
     <Grid>
         <Button x:Name="InspectorGo" Content="Войти как инспектор" HorizontalAlignment="Left" Margin="250,27,0,0" VerticalAlignment="Top" Width="222" Height="68" Click="InspectorGo_Click" Background="#FF165B84" Foreground="White"/>
         <Button x:Name="CheckFin" Content="Проверить штрафы" HorizontalAlignment="Left" Margin="15,112,0,0" VerticalAlignment="Top" Width="215" Height="68" Click="CheckFin_Click"/>

@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.Inspector.Driver"
         mc:Ignorable="d"
-        Title="Новый штраф" Style="{StaticResource StyleWindow}" Height="352" Width="474">
+        Title="Новый штраф" Style="{StaticResource StyleWindow}" Height="312" Width="447.6">
     <Grid>
         <Label Content="Серия и номер ВУ" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Сумма штрафа" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top"/>
         <Label Content="Причина штрафа" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Description" HorizontalAlignment="Left" Height="120" Margin="165,90,0,0" TextWrapping="Wrap" Text="Превышение скорости" VerticalAlignment="Top" Width="270"/>
-        <TextBox x:Name="Sum" HorizontalAlignment="Left" Height="23" Margin="165,54,0,0" TextWrapping="Wrap" Text="2000" VerticalAlignment="Top" Width="145"/>
+        <TextBox x:Name="Description" HorizontalAlignment="Left" Height="120" Margin="165,90,0,0" MaxLength="100" TextWrapping="Wrap" Text="Превышение скорости" VerticalAlignment="Top" Width="270"/>
+        <TextBox x:Name="Sum" HorizontalAlignment="Left" Height="23" MaxLength="10" Margin="165,54,0,0" TextWrapping="Wrap" Text="2000" VerticalAlignment="Top" Width="145"/>
         <TextBox x:Name="Driver" MaxLength="10" HorizontalAlignment="Left" Height="23" Margin="165,19,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="145" TextChanged="Driver_TextChanged"/>
-        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Margin="110,230,0,0" VerticalAlignment="Top" Width="145" Height="60" Click="Back_Click"/>
-        <Button IsEnabled="False" x:Name="Add" Content="Назначить" HorizontalAlignment="Left" Margin="290,230,0,0" VerticalAlignment="Top" Width="145" Height="60" Click="Add_Click"/>
+        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Left" Margin="303,215,0,0" VerticalAlignment="Top" Width="132" Height="55" Click="Back_Click"/>
+        <Button IsEnabled="False" x:Name="Add" Content="Назначить" HorizontalAlignment="Left" Margin="165,215,0,0" VerticalAlignment="Top" Width="132" Height="55" Click="Add_Click"/>
 
     </Grid>
 </Window>

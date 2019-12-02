@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Logic.Models;
 using Logic.LogicsModel;
+using Logic.OtherLogic;
+
 namespace StateTrafficInspectorate.Inspector.Driver
 {
     /// <summary>
@@ -34,22 +36,31 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            InsurancesModel insurances = new InsurancesModel()
+            try
             {
-                IdTransport = LogicTransport.GetIdByVIN(VIN.Text),
-                InsurancesDate = DateInsurance.SelectedDate.Value,
-                ExpireDate = DateExpire.SelectedDate.Value,
-                Series = Series.Text,
-                Number = Number.Text,
-                Type = LogicTypeInsurances.GetIdByName(Type.Text),
-                Sum = double.Parse(Sum.Text)
-            };
-            LogicInsurances.SaveInsurance(insurances);
-            MessageBox.Show("Страховка успешно зарегистрирована");
 
-            InspectorMainWindow inspector = new InspectorMainWindow();
-            inspector.Show();
-            this.Close();
+                InsurancesModel insurances = new InsurancesModel()
+                {
+                    IdTransport = LogicTransport.GetIdByVIN(VIN.Text),
+                    InsurancesDate = DateInsurance.SelectedDate.Value,
+                    ExpireDate = DateExpire.SelectedDate.Value,
+                    Series = Series.Text,
+                    Number = Number.Text,
+                    Type = LogicTypeInsurances.GetIdByName(Type.Text),
+                    Sum = double.Parse(Sum.Text)
+                };
+                LogicInsurances.SaveInsurance(insurances);
+                MessageBox.Show("Страховка успешно зарегистрирована");
+
+                InspectorMainWindow inspector = new InspectorMainWindow();
+                inspector.Show();
+                this.Close();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
@@ -59,19 +70,29 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
         private void VIN_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (VIN.Text.Length == 17)
+            try
             {
-                if (LogicTransport.GetIdByVIN(VIN.Text) == 0)
+
+                if (VIN.Text.Length == 17)
                 {
-                    Add.IsEnabled = false;
-                    MessageBoxResult message = MessageBox.Show("Транспорта с таким VIN кодом не существует, желаете добавить новый транспорт?", "Транспорт не найден", MessageBoxButton.YesNo);
-                    if (message == MessageBoxResult.Yes)
+                    if (LogicTransport.GetIdByVIN(VIN.Text) == 0)
                     {
-                        Transport.AddTransport addTransport = new Transport.AddTransport();
-                        addTransport.Show();
+                        Add.IsEnabled = false;
+                        MessageBoxResult message = MessageBox.Show("Транспорта с таким VIN кодом не существует, желаете добавить новый транспорт?", "Транспорт не найден", MessageBoxButton.YesNo);
+                        if (message == MessageBoxResult.Yes)
+                        {
+                            Transport.AddTransport addTransport = new Transport.AddTransport();
+                            LogicWindow.FromAddInsurance();
+                            addTransport.Show();
+                        }
                     }
+                    else Add.IsEnabled = true;
                 }
-                else Add.IsEnabled = true;
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -16,12 +16,15 @@ using Logic.Models;
 using Logic.LogicsModel;
 using System.IO;
 using Logic.OtherLogic;
+using Logic;
+using Logic.Enums;
+
 namespace StateTrafficInspectorate.Inspector.Driver
 {
     /// <summary>
     /// Логика взаимодействия для AddDriverWindow.xaml
     /// </summary>
-    public partial class AddDriverWindow : Window
+    public partial class AddDriverWindow : System.Windows.Window
     {
         public AddDriverWindow()
         {
@@ -36,7 +39,7 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
                 DriverModel newDriver = new DriverModel()
                 {
-                    FirstName = StringType.CheckValid(FirstName.Text),
+                    FirstName = FirstName.Text,
                     LastName = LastName.Text,
                     Patronymic = Patronymic.Text,
                     SerialPasp = PaspSeries.Text,
@@ -64,9 +67,20 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
                 MessageBox.Show("Водитель успешно добавлен!");
 
-                DriverList driverList = new DriverList();
-                driverList.Show();
-                this.Close();
+                switch (SecurityContext.CurrentWindow)
+                {
+                    case Logic.Enums.EnumWindow.AddLicense:
+                        this.Close();
+                        break;
+                    case Logic.Enums.EnumWindow.AddTransport:
+                        this.Close();
+                        break;
+                    case Logic.Enums.EnumWindow.DriverList:
+                        DriverList driverList = new DriverList();
+                        driverList.Show();
+                        this.Close();
+                        break;
+                }
             }
             catch (Exception ex)
             {
@@ -79,21 +93,43 @@ namespace StateTrafficInspectorate.Inspector.Driver
 
         private void Photo_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog FileDialog = new OpenFileDialog
+            try
             {
-                Filter = "Изображение |*.jpg;*.jpeg;*.png;*.bmp"
-            };
-            if (FileDialog.ShowDialog() == true)
-            {
-                ImageURL.Text = FileDialog.FileName;
+
+                OpenFileDialog FileDialog = new OpenFileDialog
+                {
+                    Filter = "Изображение |*.jpg;*.jpeg;*.png;*.bmp"
+                };
+                if (FileDialog.ShowDialog() == true)
+                {
+                    ImageURL.Text = FileDialog.FileName;
+                }
+
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            DriverList driverList = new DriverList();
-            driverList.Show();
-            this.Close();
+            switch(SecurityContext.CurrentWindow)
+            {
+                case Logic.Enums.EnumWindow.AddLicense:
+                    this.Close();
+                    break;
+                case Logic.Enums.EnumWindow.AddTransport:
+                    this.Close();
+                    break;
+                case Logic.Enums.EnumWindow.DriverList:
+                    DriverList driverList = new DriverList();
+                    driverList.Show();
+                    this.Close();
+                    break;
+            }
+
         }
     }
 }
