@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{30078C38-9634-48E6-BC4A-85DFFD0D6FF0}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupInspectorate", "SetupInspectorate\SetupInspectorate.vdproj", "{69D8502C-F337-48C5-ACDD-56FA549DB4B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,8 @@ Global
 		{30078C38-9634-48E6-BC4A-85DFFD0D6FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30078C38-9634-48E6-BC4A-85DFFD0D6FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30078C38-9634-48E6-BC4A-85DFFD0D6FF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69D8502C-F337-48C5-ACDD-56FA549DB4B1}.Debug|Any CPU.ActiveCfg = Debug
+		{69D8502C-F337-48C5-ACDD-56FA549DB4B1}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

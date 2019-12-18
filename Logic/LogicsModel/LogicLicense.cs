@@ -46,6 +46,18 @@ namespace Logic.LogicsModel
             var Query = DbContext.db.License.Where(lic => lic.LicenseSeries == license.Substring(0, 4) && lic.LicenseNumber == license.Substring(4, 6));
             return Query.FirstOrDefault().IdDriver;
         }
+        public static bool CurrentDriver(string license)
+        {
+            var Query = DbContext.db.License.Where(lic => lic.LicenseSeries == license.Substring(0, 4) && lic.LicenseNumber == license.Substring(4, 6));
+            if (Query.Count() == 1)
+            {
+                SecurityContext.CurrentDriver = Query.FirstOrDefault().IdDriver;
+                return true;
+            }
+            else return false;
+
+        }
+
         public static void ChangeStatusLicense(StatusChangeModel newStatus)
         {
 

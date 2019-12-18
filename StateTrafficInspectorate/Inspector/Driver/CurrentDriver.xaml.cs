@@ -197,5 +197,19 @@ namespace StateTrafficInspectorate.Inspector.Driver
             LicenseCurrentDriver license = new LicenseCurrentDriver();
             license.Show();
         }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

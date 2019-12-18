@@ -30,5 +30,27 @@ namespace StateTrafficInspectorate.UnRegisteredUser
             main.Show();
             this.Close();
         }
+
+        private void Check_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                if (Logic.LogicsModel.LogicLicense.CurrentDriver(License.Text))
+                {
+
+                    CheckCurrentDriver currentDriver = new CheckCurrentDriver();
+                    currentDriver.Show();
+                    this.Close();
+
+                }
+                else throw new Exception("Водителя с таким ВУ не существует");
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

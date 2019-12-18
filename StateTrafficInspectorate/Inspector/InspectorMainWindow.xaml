@@ -19,8 +19,8 @@
         <Button x:Name="AddLicense" Content="Добавить ВУ" FontSize="16" HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top" Width="199" Height="51" Click="AddLicense_Click"/>
         <Button x:Name="ChangeDriverTransport" Content="Изменить владельца&#xD;&#xA;       автомобиля" FontSize="16" HorizontalAlignment="Left" Margin="10,244,0,0" VerticalAlignment="Top" Width="199" Height="51" Click="ChangeDriver_Click"/>
         <Button x:Name="InspectorList" Visibility="Hidden" Content="Список инспекторов" FontSize="16" HorizontalAlignment="Left" Margin="285,244,0,0" VerticalAlignment="Top" Width="235" Height="51" Click="InspectorList_Click"/>
-        <Button x:Name="AddInsurances" Content="Добавить страховку" FontSize="16" HorizontalAlignment="Left" Margin="10,309,0,0" VerticalAlignment="Top" Width="199" Height="51" Click="AddInsurance_Click"/>
-        <Button x:Name="AddFine" Content="Назначить штраф" FontSize="16" HorizontalAlignment="Left" Margin="10,375,0,0" VerticalAlignment="Top" Width="199" Height="51" Click="AddFine_Click"/>
+        <Button x:Name="AddInsurances" Content="Добавить страховку" FontSize="16" HorizontalAlignment="Left" Margin="10,309,0,0" VerticalAlignment="Top" Width="199" Height="51" Click="AddInsurance_Click"/>   
+        <Button x:Name="AddFine" Content="Список штрафов" FontSize="16" HorizontalAlignment="Left" Margin="10,375,0,0" VerticalAlignment="Top" Width="199" Height="51" Click="AddFine_Click"/>
         <Button x:Name="ChangeStatusDriver" Content="Изменить статус водителя" FontSize="16" HorizontalAlignment="Left" Margin="285,309,0,0" VerticalAlignment="Top" Width="235" Height="51" Click="ChangeStatus_Click"/>
     </Grid>
 </Window>

@@ -222,6 +222,9 @@
     <Compile Include="Inspector\Transport\TransportList.xaml.cs">
       <DependentUpon>TransportList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UnRegisteredUser\CheckCurrentDriver.xaml.cs">
+      <DependentUpon>CheckCurrentDriver.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UnRegisteredUser\CheckDriver.xaml.cs">
       <DependentUpon>CheckDriver.xaml</DependentUpon>
     </Compile>
@@ -342,6 +345,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Resources\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UnRegisteredUser\CheckCurrentDriver.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -297,3 +297,5 @@ C:\Users\Марина\source\repos\StateTrafficInspectorate\StateTrafficInspecto
 C:\Users\Марина\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\Inspector\Driver\FineCurrentDriver.baml
 C:\Users\Марина\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\Inspector\Driver\LicenseCurrentDriver.baml
 C:\Users\Марина\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\Inspector\Transport\TransportCurrentDriver.baml
+C:\Users\Марина\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\UnRegisteredUser\CheckCurrentDriver.g.cs
+C:\Users\Марина\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\UnRegisteredUser\CheckCurrentDriver.baml
