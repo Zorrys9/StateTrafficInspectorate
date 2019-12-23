@@ -34,6 +34,8 @@ namespace Logic.Models
         public int? Status { get; set; }
 
         public int IdInspector { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime FineDate { get; set; }
 
         public static implicit operator LicenseEntityModels(LicenseModel license)
         {

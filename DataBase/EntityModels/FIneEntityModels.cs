@@ -17,5 +17,8 @@ namespace DataBase.EntityModels
 
         [StringLength(100)]
         public string Description { get; set; }
+        public int IdInspector { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime FineDate { get; set; }
     }
 }

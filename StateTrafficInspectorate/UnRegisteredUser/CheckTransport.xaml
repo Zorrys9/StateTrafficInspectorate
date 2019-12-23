@@ -5,12 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.UnRegisteredUser"
         mc:Ignorable="d"
-        Title="Проверка транспорта" Height="450" Width="334" Style="{StaticResource StyleWindow}">
+        Title="Проверка транспорта" Height="166" Width="318" Style="{StaticResource StyleWindow}">
     <Grid Background="#FFDFF0FA">
         <Label Content="VIN " FontSize="16" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <TextBox MaxLength="17" HorizontalAlignment="Left" Height="31" Margin="80,10,0,0" TextWrapping="Wrap" FontSize="18" Text="1234567890ABCDEFX" VerticalAlignment="Top" Width="215"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,120,0,0" TextWrapping="Wrap" Text="Данный автомобиль был зарегистрирован  25.09.2017 и т.д." VerticalAlignment="Top" Height="275" Width="285"/>
-        <Button x:Name="Check" Content="Проверить" FontSize="16" HorizontalAlignment="Left" Margin="160,59,0,0" VerticalAlignment="Top" Width="135" Height="45"/>
+        <TextBox x:Name="VINcode" MaxLength="17" HorizontalAlignment="Left" Height="31" Margin="80,10,0,0" TextWrapping="Wrap" FontSize="18" Text="" VerticalAlignment="Top" Width="215"/>
+        <Button x:Name="Check" Content="Проверить" FontSize="16" HorizontalAlignment="Left" Margin="160,59,0,0" VerticalAlignment="Top" Width="135" Height="45" Click="Check_Click"/>
         <Button x:Name="Back" Content="Назад" FontSize="16" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Width="135" Height="45" Click="Back_Click"/>
 
     </Grid>

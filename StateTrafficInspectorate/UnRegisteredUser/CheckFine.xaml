@@ -5,27 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate.UnRegisteredUser"
         mc:Ignorable="d"
-        Title="Проверка штрафов" Height="382" Width="784" Style="{StaticResource StyleWindow}">
+        Title="Проверка штрафов" Height="356" Width="733" Style="{StaticResource StyleWindow}">
     <Grid Background="#FFDFF0FA">
         <Label Content="Проверять по :" FontSize="16"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <ComboBox FontSize="18" x:Name="FilterName" HorizontalAlignment="Left" Margin="135,10,0,0" VerticalAlignment="Top" Width="185" Height="31">
-            <ComboBoxItem Content="VIN коду" HorizontalAlignment="Left" Width="183"/>
+        <ComboBox FontSize="18" SelectedIndex="0" x:Name="FilterName" HorizontalAlignment="Left" Margin="135,10,0,0" VerticalAlignment="Top" Width="197" Height="31">
             <ComboBoxItem Content="Паспорту водителя" HorizontalAlignment="Left" Width="183"/>
             <ComboBoxItem Content="ВУ водителя" HorizontalAlignment="Left" Width="183"/>
         </ComboBox>
-        <Label Content="VIN" FontSize="16"  HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" FontSize="18" Height="31" Margin="75,55,0,0" TextWrapping="Wrap" Text="1234567890ABCDKLW" VerticalAlignment="Top" Width="245"/>
-        <Button x:Name="Check" Content="Проверить" FontSize="18" HorizontalAlignment="Left" Margin="340,10,0,0" VerticalAlignment="Top" Width="175" Height="60"/>
-        <Button x:Name="Back" Content="Назад" FontSize="18" HorizontalAlignment="Left" Margin="560,10,0,0" VerticalAlignment="Top" Width="185" Height="60" Click="Back_Click"/>
-        <DataGrid x:Name="FineList" HorizontalAlignment="Left" Height="209" Margin="10,91,0,0" VerticalAlignment="Top" Width="735">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ФИО"/>
-                <DataGridTextColumn Header="Автомобиль"/>
-                <DataGridTextColumn Header="Сумма штрафа"/>
-                <DataGridTextColumn Header="Причина"/>
-                <DataGridTextColumn Header="Дата штрафования"/>
-                <DataGridTextColumn Header="Крайний срок погашения"/>
-            </DataGrid.Columns>
+        <TextBox x:Name="CheckItem" MaxLength="10" HorizontalAlignment="Left" FontSize="18" Height="31" Margin="10,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="322"/>
+        <Button x:Name="Check" Content="Проверить" FontSize="18" HorizontalAlignment="Left" Margin="337,26,0,0" VerticalAlignment="Top" Width="175" Height="60" Click="Check_Click"/>
+        <Button x:Name="Back" Content="Назад" FontSize="18" HorizontalAlignment="Left" Margin="525,26,0,0" VerticalAlignment="Top" Width="185" Height="60" Click="Back_Click"/>
+        <DataGrid x:Name="FineList" HorizontalAlignment="Left" Height="209" Margin="10,91,0,0" VerticalAlignment="Top" Width="700">
         </DataGrid>
 
     </Grid>

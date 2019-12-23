@@ -141,7 +141,34 @@ namespace Logic.LogicsModel
             SecurityContext.CurrentDriver = 0;
         }
 
-        
+        public static DataTable GetListFine(string pasport)
+        {
+            DataTable dtFine = new DataTable();
+            dtFine.Columns.Add("ФИО водителя");
+            dtFine.Columns.Add("Сумма штрафа");
+            dtFine.Columns.Add("Причина штрафа");
+            dtFine.Columns.Add("Дата штрафования");
+            dtFine.Columns.Add("Инспектор");
+
+
+            var query = from fine in DbContext.db.FIne
+                        join driver in DbContext.db.Drivers on fine.IdDriver equals driver.Id
+                        join inspector in DbContext.db.Inspector on fine.IdInspector equals inspector.Id
+                        where driver.SerialPasp == pasport.Substring(0, 4) && driver.NumberPasp == pasport.Substring(4, 6)
+                        select new
+                        {
+                            Driver = driver.FirstName + " " + driver.LastName + " " + driver.Patronymic,
+                            fine.Sum,
+                            fine.Description,
+                            fine.FineDate,
+                            Inspector = inspector.FirstName + " " + inspector.LastName + " " + inspector.Patronymic
+                        };
+            foreach (var fine in query)
+            {
+                dtFine.Rows.Add(fine.Driver, fine.Sum, fine.Description, fine.FineDate.ToShortDateString(), fine.Inspector);
+            }
+            return dtFine;
+        }
 
         static string CheckPhone(string phone)
         {

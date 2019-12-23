@@ -8,7 +8,7 @@
         Title="Проверка статуса водительского удостоверения" Height="192" Width="369" Style="{StaticResource StyleWindow}">
     <Grid Background="#FFDFF0FA">
         <Label Content="Серия и номер ВУ" FontSize="16" HorizontalAlignment="Left" Margin="37,10,0,0" VerticalAlignment="Top" Width="155"/>
-        <TextBox HorizontalAlignment="Left" x:Name="License" Height="31" Margin="197,10,0,0" MaxLength="10" TextWrapping="Wrap" FontSize="18" Text="1234567890" VerticalAlignment="Top" Width="122"/>
+        <TextBox x:Name="license" HorizontalAlignment="Left" Height="31" Margin="197,10,0,0" MaxLength="10" TextWrapping="Wrap" FontSize="18" Text="" VerticalAlignment="Top" Width="122"/>
         <Button x:Name="Check" Content="Проверить" FontSize="16" HorizontalAlignment="Left" Margin="197,65,0,0" VerticalAlignment="Top" Width="122" Height="55" Click="Check_Click"/>
         <Button x:Name="Back" Content="Назад" FontSize="16" HorizontalAlignment="Left" Margin="37,65,0,0" VerticalAlignment="Top" Width="122" Height="55" Click="Back_Click"/>
 

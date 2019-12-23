@@ -225,6 +225,9 @@
     <Compile Include="UnRegisteredUser\CheckCurrentDriver.xaml.cs">
       <DependentUpon>CheckCurrentDriver.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UnRegisteredUser\CheckCurrentTransport.xaml.cs">
+      <DependentUpon>CheckCurrentTransport.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UnRegisteredUser\CheckDriver.xaml.cs">
       <DependentUpon>CheckDriver.xaml</DependentUpon>
     </Compile>
@@ -349,6 +352,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UnRegisteredUser\CheckCurrentDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UnRegisteredUser\CheckCurrentTransport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

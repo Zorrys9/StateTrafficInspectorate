@@ -30,5 +30,23 @@ namespace StateTrafficInspectorate.UnRegisteredUser
             main.Show();
             this.Close();
         }
+
+        private void Check_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                Logic.SecurityContext.CurrentTransport = Logic.LogicsModel.LogicTransport.GetIdByVIN(VINcode.Text);
+
+                CheckCurrentTransport currentTransport = new CheckCurrentTransport();
+                currentTransport.Show();
+                this.Close();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

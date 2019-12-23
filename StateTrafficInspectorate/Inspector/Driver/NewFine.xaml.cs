@@ -42,7 +42,9 @@ namespace StateTrafficInspectorate.Inspector.Driver
                 {
                     IdDriver = LogicLicense.GetIdDriver(Driver.Text),
                     Sum = double.Parse(Sum.Text),
-                    Description = Description.Text
+                    Description = Description.Text,
+                    IdInspector = Logic.SecurityContext.IdUser,
+                    FineDate = DateTime.Today
                 };
                 LogicFine.SaveFine(fine);
                 MessageBox.Show("Новый штраф успешно создан");

@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Logic.LogicsModel;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace StateTrafficInspectorate.UnRegisteredUser
 {
@@ -30,5 +21,28 @@ namespace StateTrafficInspectorate.UnRegisteredUser
             main.Show();
             this.Close();
         }
+
+        private void Check_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                switch (FilterName.SelectedIndex)
+                {
+                    case 0:
+                        //pasport
+                        FineList.ItemsSource = DriverLogic.GetListFine(CheckItem.Text).DefaultView;
+                        break;
+                    case 1:
+                        //license
+                        FineList.ItemsSource = LogicLicense.GetListFine(CheckItem.Text).DefaultView;
+                        break;
+                }
+        }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+}
+
     }
 }

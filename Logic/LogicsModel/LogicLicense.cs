@@ -2,6 +2,7 @@
 using Logic.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,6 +57,15 @@ namespace Logic.LogicsModel
             }
             else return false;
 
+        }
+
+        public static string CheckStatusLicense(string license)
+        {
+            var idStatus = DbContext.db.License.Where(lic => lic.LicenseSeries == license.Substring(0, 4) && lic.LicenseNumber == license.Substring(4, 6)).FirstOrDefault().Status.Value;
+            var query = DbContext.db.StatusLicense.Find(idStatus);
+            if (query.Name != null)
+                return query.Name;
+            else throw new Exception("ВУ с такими данными не существует");
         }
 
         public static void ChangeStatusLicense(StatusChangeModel newStatus)
@@ -136,6 +146,36 @@ namespace Logic.LogicsModel
                 SeriesNumberLicense = License.SeriesNumberLicense,
                 Photo = License.Photo
             };
+        }
+
+        public static DataTable GetListFine(string License)
+        {
+            DataTable dtFine = new DataTable();
+            dtFine.Columns.Add("ФИО водителя");
+            dtFine.Columns.Add("Сумма штрафа");
+            dtFine.Columns.Add("Причина штрафа");
+            dtFine.Columns.Add("Дата штрафования");
+            dtFine.Columns.Add("Инспектор");
+
+
+            var query = from fine in DbContext.db.FIne
+                        join driver in DbContext.db.Drivers on fine.IdDriver equals driver.Id
+                        join inspector in DbContext.db.Inspector on fine.IdInspector equals inspector.Id
+                        join license in DbContext.db.License on driver.Id equals license.IdDriver
+                        where license.LicenseSeries == License.Substring(0,4) && license.LicenseNumber == License.Substring(4,6)
+                        select new
+                        {
+                            Driver = driver.FirstName + " " + driver.LastName + " " + driver.Patronymic,
+                            fine.Sum,
+                            fine.Description,
+                            fine.FineDate,
+                            Inspector = inspector.FirstName + " "+ inspector.LastName + " " + inspector.Patronymic
+                        };
+            foreach(var fine in query)
+            {
+                dtFine.Rows.Add(fine.Driver, fine.Sum, fine.Description, fine.FineDate.ToShortDateString(), fine.Inspector);
+            }
+            return dtFine;
         }
 
     }

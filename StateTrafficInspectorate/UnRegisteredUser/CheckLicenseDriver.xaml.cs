@@ -33,7 +33,14 @@ namespace StateTrafficInspectorate.UnRegisteredUser
 
         private void Check_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Статус ВУ : Просрочен");
+            try
+            {
+                MessageBox.Show("Текущий статус запрашиваемого ВУ : " + Logic.LogicsModel.LogicLicense.CheckStatusLicense(license.Text));
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -79,6 +79,7 @@ namespace Logic.LogicsModel
             SecurityContext.CurrentTransport = DbContext.db.Transport.Where(tr => tr.VIN == VIN).FirstOrDefault().Id;
         }
 
+       
         public static TransportModel GetCurrentTransport()
         {
             return DbContext.db.Transport.Where(tr => tr.Id == SecurityContext.CurrentTransport).FirstOrDefault();
