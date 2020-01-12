@@ -39,6 +39,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -50,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBaseLogic.cs" />
     <Compile Include="DbContext.cs" />
     <Compile Include="EntityModels\CategoryLicenseEntityModels.cs" />
     <Compile Include="EntityModels\CategoryTransportEntityModels.cs" />

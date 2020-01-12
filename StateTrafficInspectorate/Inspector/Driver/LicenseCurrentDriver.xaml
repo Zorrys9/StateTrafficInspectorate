@@ -20,13 +20,15 @@
             <Label x:Name="DateExpire" Content="" Canvas.Left="405" FontSize="11" Canvas.Top="237" Height="30" FontWeight="Bold" RenderTransformOrigin="0.532,0.484"/>
             <Label x:Name="LicenseSeriesNumber" Content="" Canvas.Left="226" FontSize="11" Canvas.Top="293" Height="30" FontWeight="Bold" RenderTransformOrigin="0.532,0.484"/>
             <Label x:Name="Address" Content="" Canvas.Left="226" FontSize="11" Canvas.Top="310" Height="30" FontWeight="Bold" RenderTransformOrigin="0.532,0.484"/>
-            <Label x:Name="Category" Content="Q" Canvas.Left="226" FontSize="11" Canvas.Top="345" Height="30" FontWeight="Bold" RenderTransformOrigin="0.532,0.484"/>
+            <Label x:Name="Category" Content="" Canvas.Left="226" FontSize="11" Canvas.Top="345" Height="30" FontWeight="Bold" RenderTransformOrigin="0.532,0.484"/>
             <Image x:Name="DriverImage" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="132" Canvas.Left="60" Canvas.Top="124"/>
             <Label x:Name="FirstNameTranslyte" Content="" Canvas.Left="226" FontSize="11" Canvas.Top="129" Height="30" RenderTransformOrigin="0.532,0.484"/>
             <Label x:Name="LastNamePatrTranslyte" Content="" Canvas.Left="226" FontSize="11" Canvas.Top="160" Height="30" RenderTransformOrigin="0.532,0.484"/>
             <Label x:Name="AddressLifeTranslyte" Content="" Canvas.Left="226" FontSize="11" Canvas.Top="212" Height="30" RenderTransformOrigin="0.532,0.484"/>
             <Label x:Name="gibddTranslyte" Content="GIBDD 7717" Canvas.Left="226" FontSize="12" Canvas.Top="271" Height="30" RenderTransformOrigin="0.532,0.484"/>
             <Label x:Name="AddressTranslyte" Content="" Canvas.Left="226" FontSize="11" Canvas.Top="323" RenderTransformOrigin="0.532,0.484"/>
+            <TextBlock Canvas.Left="230" TextWrapping="Wrap" Text="B" FontWeight="Bold" Canvas.Top="348"/>
+            <Border BorderBrush="Black" BorderThickness="1" Height="21" Canvas.Left="226" Canvas.Top="348" Width="19"/>
         </Canvas>
         <Button x:Name="Save" Content="Сохранить" HorizontalAlignment="Left" Margin="670,405,0,0" VerticalAlignment="Top" Width="110" Height="45" Click="Save_Click"/>
 

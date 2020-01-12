@@ -5,13 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StateTrafficInspectorate"
         mc:Ignorable="d"
-        Title="Главная страница Госавтоинспекции" Height="236" Width="734.116" Style="{StaticResource StyleWindow}">
+        Title="Главная страница Госавтоинспекции" Height="261" Width="483" Style="{StaticResource StyleWindow}">
     <Grid>
-        <Button x:Name="InspectorGo" Content="Войти как инспектор" HorizontalAlignment="Left" Margin="250,27,0,0" VerticalAlignment="Top" Width="222" Height="68" Click="InspectorGo_Click" Background="#FF165B84" Foreground="White"/>
         <Button x:Name="CheckFin" Content="Проверить штрафы" HorizontalAlignment="Left" Margin="15,112,0,0" VerticalAlignment="Top" Width="215" Height="68" Click="CheckFin_Click"/>
-        <Button x:Name="CheckLicenseDriver" Content="Проверить статус ВУ" HorizontalAlignment="Left" Margin="490,27,0,0" VerticalAlignment="Top" Width="215" Height="68" Click="CheckLicenseDriver_Click"/>
+        <Button x:Name="CheckLicenseDriver" Content="Проверить статус ВУ" HorizontalAlignment="Left" Margin="245,27,0,0" VerticalAlignment="Top" Width="215" Height="68" Click="CheckLicenseDriver_Click"/>
         <Button x:Name="CheckDriver" Content="Проверка водителя" HorizontalAlignment="Left" Margin="15,27,0,0" VerticalAlignment="Top" Width="215" Height="68" Click="CheckDriver_Click"/>
-        <Button x:Name="CheckTransport" Content="Проверка автомобиля"  HorizontalAlignment="Left" Margin="490,112,0,0" VerticalAlignment="Top" Width="215" Height="68" Click="CheckTransport_Click"/>
-        <Button x:Name="Exit" Content="Выход" HorizontalAlignment="Left" Margin="250,112,0,0" VerticalAlignment="Top" Width="222" Height="68" Click="Exit_Click"/>
+        <Button x:Name="CheckTransport" Content="Проверка автомобиля"  HorizontalAlignment="Left" Margin="245,112,0,0" VerticalAlignment="Top" Width="215" Height="68" Click="CheckTransport_Click"/>
+        <Menu FontSize="16" Height="35" VerticalAlignment="Top" OpacityMask="Black" Margin="0,197,0,0">
+            <MenuItem Header="Войти как инспектор" Click="InspectorGo_Click" Height="28"></MenuItem>
+            <MenuItem Margin="80 0 0 0" Header="Закрыть приложение" Click="Exit_Click" Height="28"/>
+            <MenuItem Margin="10 0 0 0" Header="" Width="30" Click="Settings_Click" Height="28">
+                <MenuItem.Icon >
+                    <Image Source="Setting.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

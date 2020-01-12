@@ -31,3 +31,5 @@ C:\Users\sasch\source\repos\StateTrafficInspectorate\Logic\obj\Debug\Logic.cspro
 C:\Users\sasch\source\repos\StateTrafficInspectorate\Logic\obj\Debug\Logic.csproj.CopyComplete
 C:\Users\sasch\source\repos\StateTrafficInspectorate\Logic\obj\Debug\Logic.dll
 C:\Users\sasch\source\repos\StateTrafficInspectorate\Logic\obj\Debug\Logic.pdb
+C:\Users\sasch\source\repos\StateTrafficInspectorate\Logic\obj\Debug\Logic.Properties.Resources.resources
+C:\Users\sasch\source\repos\StateTrafficInspectorate\Logic\obj\Debug\Logic.csproj.GenerateResource.cache

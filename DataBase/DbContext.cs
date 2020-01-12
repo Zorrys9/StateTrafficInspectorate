@@ -11,7 +11,7 @@ namespace DataBase
     {
 
         public DbContext()
-           : base("gibdd")
+           : base("GIBDD")
         {
         }
 

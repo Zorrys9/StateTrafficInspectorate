@@ -22,5 +22,6 @@
         <Button x:Name="AddInsurances" Content="Добавить страховку" FontSize="16" HorizontalAlignment="Left" Margin="10,309,0,0" VerticalAlignment="Top" Width="199" Height="51" Click="AddInsurance_Click"/>   
         <Button x:Name="AddFine" Content="Список штрафов" FontSize="16" HorizontalAlignment="Left" Margin="10,375,0,0" VerticalAlignment="Top" Width="199" Height="51" Click="AddFine_Click"/>
         <Button x:Name="ChangeStatusDriver" Content="Изменить статус водителя" FontSize="16" HorizontalAlignment="Left" Margin="285,309,0,0" VerticalAlignment="Top" Width="235" Height="51" Click="ChangeStatus_Click"/>
+        <Button x:Name="Report" Content="Отчет по водителям" FontSize="16" HorizontalAlignment="Left" Margin="285,244,0,0" VerticalAlignment="Top" Width="235" Height="51" Click="Report_Click"/>
     </Grid>
 </Window>

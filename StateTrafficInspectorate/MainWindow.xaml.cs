@@ -79,5 +79,12 @@ namespace StateTrafficInspectorate
         {
             this.Close();
         }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            Setting.Authorization authorization = new Setting.Authorization();
+            authorization.Show();
+            this.Close();
+        }
     }
 }

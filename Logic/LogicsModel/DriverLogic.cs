@@ -170,6 +170,31 @@ namespace Logic.LogicsModel
             return dtFine;
         }
 
+        public static DataTable GetReportList()
+        {
+            DataTable dtReport = new DataTable();
+            dtReport.Columns.Add("ФИО водителя");
+            dtReport.Columns.Add("Паспорт");
+            dtReport.Columns.Add("Дата рождения");
+            dtReport.Columns.Add("Водительский стаж");
+            dtReport.Columns.Add("Количество автомобилей");
+            dtReport.Columns.Add("Количество штрафов");
+
+
+            var query = DbContext.db.Drivers.OrderBy(dr => dr.FirstName).ToList();
+            
+
+            foreach (var driver in query)
+            {
+                var countTransport = DbContext.db.Transport.Where(tr => tr.IdDriver == driver.Id);
+                var countFine = DbContext.db.FIne.Where(fine => fine.IdDriver == driver.Id);
+                dtReport.Rows.Add(driver.FirstName + " " + driver.LastName + " " + driver.Patronymic, driver.SerialPasp + " " + driver.NumberPasp, driver.DateBirth, driver.DrivingExperience, countTransport.Count(), countFine.Count());
+            }
+
+            return dtReport;
+        }
+
+
         static string CheckPhone(string phone)
         {
             Regex regexPhone = new Regex(@"^[0-9]+$");

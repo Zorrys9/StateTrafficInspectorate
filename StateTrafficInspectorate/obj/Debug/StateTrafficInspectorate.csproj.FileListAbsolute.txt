@@ -140,7 +140,6 @@ C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\bi
 C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\bin\Debug\System.Text.Encodings.Web.xml
-C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\StateTrafficInspectorate.exe.config
 C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\Inspector\Driver\CurrentDriver.g.cs
 C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\Inspector\Driver\CurrentDriver.baml
 C:\Users\Марина\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\bin\Debug\IdentityModel.dll
@@ -303,3 +302,11 @@ C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\ob
 C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\UnRegisteredUser\CheckCurrentTransport.g.cs
 C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\UnRegisteredUser\CheckCurrentDriver.baml
 C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\UnRegisteredUser\CheckCurrentTransport.baml
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\Setting\AdminMainWindow.g.cs
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\Setting\Authorization.g.cs
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\Setting\AdminMainWindow.baml
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\Setting\Authorization.baml
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\bin\Debug\Microsoft.Data.ConnectionUI.Dialog.dll
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\bin\Debug\Microsoft.Data.ConnectionUI.dll
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\ReportWindow.g.cs
+C:\Users\sasch\source\repos\StateTrafficInspectorate\StateTrafficInspectorate\obj\Debug\ReportWindow.baml

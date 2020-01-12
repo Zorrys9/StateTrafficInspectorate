@@ -113,5 +113,12 @@ namespace StateTrafficInspectorate.Inspector
             if (LogicInspector.GetPositionInspector() == 2)
                 InspectorList.Visibility = Visibility;
         }
+
+        private void Report_Click(object sender, RoutedEventArgs e)
+        {
+            ReportWindow reportWindow = new ReportWindow();
+            reportWindow.Show();
+            this.Close();
+        }
     }
 }
